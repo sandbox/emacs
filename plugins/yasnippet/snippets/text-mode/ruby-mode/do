@@ -1,0 +1,6 @@
+#name : do n ... end
+#group : control structure
+# --
+do ${param}
+  $0
+end
