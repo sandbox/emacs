@@ -101,7 +101,7 @@
 
 ;;; Code:
 
-(require 'speedbar)
+;; (require 'speedbar)
 (require 'font-lock)
 (require 'cc-mode)
 (require 'cc-langs)

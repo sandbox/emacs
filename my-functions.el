@@ -10,8 +10,6 @@
   (interactive)
   (set-frame-font "-bitstream-Bitstream Vera Sans Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1"))
 
-;;(set-frame-font "-Misc-Fixed-Medium-R-Normal--20-200-75-75-C-100-ISO8859-1"))
-;; (set-frame-font "lucidasanstypewriter-bold-14")
 (defun delete-until-pattern ()
    "deletes until the given pattern"
    (interactive)

@@ -51,8 +51,8 @@
 ;;(global-set-key "\C-l" 'recenter) ;; this is what it was
 ;;also is bound to execute lisp command in scratch hopefully
 ;; (global-set-key "\C-j" 'backward-word)
-(global-set-key "\C-l" 'forward-word)
-(global-set-key "\C-c\C-l" 'recenter) ;;this is our rebinding
+;;(global-set-key "\C-l" 'forward-word)
+;;(global-set-key "\C-c\C-l" 'recenter) ;;this is our rebinding
 (global-set-key "\M-p" 'backward-paragraph)
 (global-set-key "\M-n" 'forward-paragraph)
 
