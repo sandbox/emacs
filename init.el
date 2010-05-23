@@ -164,6 +164,8 @@
   (progn
     (load-file "~/.emacs.d/window-theme.el")
     (my-color-theme)
+    ;; some stupid mac shit
+    (set-face-attribute 'region nil :background "gray20")
     (global-hl-line-mode 1)
     (setq default-frame-alist
 	  (append
@@ -189,9 +191,6 @@
 (autoload 'wipe "revive" "Wipe Emacs" t)
 
 ;;;(define-key ctl-x-map "C" 'see-you-again)
-
-;; some stupid mac shit
-(set-face-attribute 'region nil :background "gray20")
 
 ;; testing out the ido mode
 (ido-mode t)

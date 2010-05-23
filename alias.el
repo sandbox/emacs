@@ -1,4 +1,3 @@
-;;
 ;; -*- emacs-lisp -*-
 ;;
 ;; a file for my aliases
@@ -74,6 +73,9 @@
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
 (global-set-key "\C-c;d" 'delete-until-pattern)
+(global-set-key "\C-cd" 'delete-until-pattern)
+
+(global-set-key "\C-c\C-r" 'recursive-edit)
 
 (global-set-key "\C-xwe" 'ediff)
 (global-set-key "\C-xwd" 'diff)
@@ -103,3 +105,4 @@
 
 (global-set-key "\C-c;js" 'javascript-mode)
 (global-set-key "\C-c;jh" 'sgml-mode)
+

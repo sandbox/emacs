@@ -2,10 +2,10 @@
 ;; Yasnippets - this adds some auto completion commands for several
 ;; languages
 ;;========================================================================
-;; (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
-;; (require 'yasnippet)
-;; (yas/initialize)
-;; (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
 ;;========================================================================
 ;; php
@@ -57,7 +57,7 @@
 ;;========================================================================
 ;; R
 ;;========================================================================
-;;(require 'ess-site)
+(require 'ess-site)
 
 
 ;;========================================================================
@@ -67,7 +67,6 @@
 (add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
 (autoload 'csv-mode "csv-mode"
   "Major mode for editing comma-separated value files." t)
-
 
 
 ;; ==============================================================================
@@ -83,3 +82,6 @@
 
 ;; figure out how to actually change the default using this for now.
 (setq auto-mode-alist (cons '("\\.tex$" . latex-mode) auto-mode-alist))
+
+;; figure out how to actually change the default using this for now.
+(setq auto-mode-alist (cons '("\\.rake$" . ruby-mode) auto-mode-alist))
