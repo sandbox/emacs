@@ -92,7 +92,7 @@
      (mode-line-inactive ((t (:background "white" :foreground "black" :inverse-video t))))
      ;; (mouse ((t (:background "black"))))
      (next-error ((t (:background "red" :foreground "white" :underline t))))
-     ;; (nobreak-space ((t ())))
+     (nobreak-space ((t (:background "magenta" :foreground "white" :underline t))))
      ;; (query-replace ((t ())))
      ;; (region ((t (:inverse-video t))))
      (region ((t (:background "blue" :foreground "white"))))
@@ -101,7 +101,7 @@
      ;; (shadow ((t ())))
      (show-paren-match ((t (:background "green" :foreground "white"))))
      ;; (show-paren-mismatch ((t ())))
-     ;; (tool-bar
+     (tool-bar ((t (:background "black" :foreground "white" :underline t))))
      ;; (tooltip
      (trailing-whitespace ((t (:background "red" :foreground "red"))))
      ;; (underline
@@ -112,4 +112,6 @@
      ;; (widget-documentation
      ;; (widget-field
      ;; (widget-single-line-field
+     ;; (yas/field-debug-face ((t (:background "black"))))
+     (yas/field-highlight-face ((t (:background "magenta" :foreground "black"))))
      )))
