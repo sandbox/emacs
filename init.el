@@ -142,7 +142,7 @@
     (setenv "SHELL" shell-file-name)
     (setq exec-path (cons "/opt/local/sbin" exec-path))
     (setq exec-path (cons "/opt/local/bin" exec-path))
-    (setq exec-path (cons "/opt/local/lib/postgresql83/bin" exec-path))
+    (setq exec-path (cons "/opt/local/lib/postgresql84/bin" exec-path))
     (setq exec-path (cons "/usr/local/git/bin" exec-path))
     (setenv "PATH" (concat "/usr/local/git/bin:" (getenv "PATH")))
     ))
