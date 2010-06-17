@@ -6,3 +6,6 @@ server
 puttycolors.txt
 games
 README
+*.elc
+**/*.elc
+tramp
