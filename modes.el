@@ -85,3 +85,4 @@
 
 ;; figure out how to actually change the default using this for now.
 (setq auto-mode-alist (cons '("\\.rake$" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.gemspec$" . ruby-mode) auto-mode-alist))
