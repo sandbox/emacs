@@ -1,5 +1,11 @@
 ;;========================================================================
-;; Yasnippets - this adds some auto completion commands for several
+;; nxhtml mode
+;;========================================================================
+;; (load "~/.emacs.d/plugins/nxhtml/autostart.el")
+;; (load "~/.emacs.d/lisp/multi-mode.el")
+
+;;========================================================================
+;; yasnippets - this adds some auto completion commands for several
 ;; languages
 ;;========================================================================
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
@@ -68,6 +74,15 @@
 (autoload 'csv-mode "csv-mode"
   "Major mode for editing comma-separated value files." t)
 
+;;========================================================================
+;; Markdown
+;;========================================================================
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
 
 ;; ==============================================================================
 ;; MODE AUTOLOAD setup for extensions
@@ -86,3 +101,6 @@
 ;; figure out how to actually change the default using this for now.
 (setq auto-mode-alist (cons '("\\.rake$" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.gemspec$" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("^Rakefile$" . ruby-mode) auto-mode-alist))
+
+;; (setq auto-mode-alist (cons '("\\.erb$" . eruby-nxhtml-mumamo-mode) auto-mode-alist))

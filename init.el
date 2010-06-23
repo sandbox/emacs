@@ -195,3 +195,6 @@
 ;; testing out the ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
+
+(setq grep-find-use-xargs t) ;; uses xargs in grep-find
+;; (cua-mode t)

@@ -23,6 +23,12 @@
      ;; (completions-first-difference ((t ())))
      ;;(cursor ((t ())))
      ;; (default ((t (nil))))
+
+     (cua-global-mark ((t (:background "blue" :foreground "white"))))
+     (cua-rectangle ((t (:background "yellow" :foreground "black"))))
+     (cua-rectangle-noselect ((t (:background "yellow" :foreground "blue"))))
+
+     (diff-refine-change ((t (:background "yellow" :foreground "black"))))
      
      (ediff-current-diff-A ((t (:background "green" :foreground "black"))))
      (ediff-current-diff-Ancestor ((t (:background "red" :foreground "black"))))
@@ -79,6 +85,7 @@
      (hl-line ((t (:background "white" :foreground "black"))))
      ;; (highlight ((t ())))
      (isearch ((t (:underline t :background "magenta" :foreground "black"))))
+     (isearch-fail ((t (:underline t :background "red" :foreground "black"))))
      (italic ((t (:inverse-video t))))
      (lazy-highlight ((t (:background "cyan" :foreground "black" :underline t :overline t))))
      ;; (link ((t ())))
@@ -99,19 +106,27 @@
      ;; (scroll-bar ((t ())))
      ;; (secondary-selection ((t ())))
      ;; (shadow ((t ())))
-     (show-paren-match ((t (:background "green" :foreground "white"))))
+     (show-paren-match ((t (:background "green" :foreground "black"))))
      ;; (show-paren-mismatch ((t ())))
      (tool-bar ((t (:background "black" :foreground "white" :underline t))))
      ;; (tooltip
      (trailing-whitespace ((t (:background "red" :foreground "red"))))
      ;; (underline
      ;; (variable-pitch
-     ;; (veritcal-border 
-     ;; (widget-button 
+     ;; (veritcal-border
+     (viper-minibuffer-emacs ((t (:background "black" :foregound "magenta"))))
+     (viper-minibuffer-insert ((t (:background "black" :foreground "magenta"))))
+     (viper-search ((t (:underline t :background "magenta" :foreground "black"))))
      ;; (widget-button-pressed
      ;; (widget-documentation
      ;; (widget-field
      ;; (widget-single-line-field
      ;; (yas/field-debug-face ((t (:background "black"))))
      (yas/field-highlight-face ((t (:background "magenta" :foreground "black"))))
+     ;; (widget-button
+     (mumamo-background-chunk-major ((t (:background nil))))
+     (mumamo-background-chunk-submode1 ((t (:background "black"))))
+     (mumamo-background-chunk-submode2 ((t (:background "black"))))
+     (mumamo-background-chunk-submode3 ((t (:background "black"))))
+     (mumamo-background-chunk-submode4 ((t (:background "black"))))
      )))

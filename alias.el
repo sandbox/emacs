@@ -72,8 +72,11 @@
 (global-set-key "\M-%" 'query-replace-regexp)
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
-(global-set-key "\C-c;d" 'delete-until-pattern)
-(global-set-key "\C-cd" 'delete-until-pattern)
+
+;; zapping to string/regexp and the like
+(global-set-key (kbd "M-Z") 'zap-to-string)
+(global-set-key (kbd "M-z") 'zap-to-regexp)
+(global-set-key (kbd "C-M-z") 'zap-to-char)
 
 (global-set-key "\C-c\C-r" 'recursive-edit)
 
@@ -106,3 +109,4 @@
 (global-set-key "\C-c;js" 'javascript-mode)
 (global-set-key "\C-c;jh" 'sgml-mode)
 
+(global-set-key "\C-xr\C-@" 'cua-set-rectangle-mark)

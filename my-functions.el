@@ -19,6 +19,25 @@
                        (search-backward-regexp regexp))))
        (delete-region beg end))))
 
+;;
+;; taken from tassilo's blog
+;; 
+(defun zap-to-string (arg str)
+  "Same as `zap-to-char' except that it zaps to the given string
+instead of a char."
+  (interactive "p\nsZap to string: ")
+  (kill-region (point) (progn
+                         (search-forward str nil nil arg)
+                         (point))))
+
+(defun zap-to-regexp (arg regexp)
+  "Same as `zap-to-char' except that it zaps to the given regexp
+instead of a char."
+  (interactive "p\nsZap to regexp: ")
+  (kill-region (point) (progn
+                         (re-search-forward regexp nil nil arg)
+                         (point))))
+
 (make-variable-frame-local 'my-frame-state)
 (defun my-frame-maximize ()
   "Maximize Emacs window in win32"
