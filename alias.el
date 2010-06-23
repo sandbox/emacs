@@ -28,6 +28,7 @@
 
 (global-set-key [(control tab)] 'hippie-expand)
 (global-set-key "\C-ch" 'hippie-expand)
+(global-set-key "\M-/" 'hippie-expand)
 
 ;;(global-set-key "\C-c\C-r" 'speedbar-refresh)
 ;;(global-set-key "\C-c\C-f" 'speedbar-toggle-show-all-files)
@@ -72,6 +73,7 @@
 (global-set-key "\M-%" 'query-replace-regexp)
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
+(global-set-key "\M-g" 'goto-line)
 
 ;; zapping to string/regexp and the like
 (global-set-key (kbd "M-Z") 'zap-to-string)
