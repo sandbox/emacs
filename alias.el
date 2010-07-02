@@ -112,3 +112,14 @@
 (global-set-key "\C-c;jh" 'sgml-mode)
 
 (global-set-key "\C-xr\C-@" 'cua-set-rectangle-mark)
+
+;;
+;; alias for occur/grep mode
+;;
+(define-key occur-mode-map "n" 'occur-next)
+(define-key occur-mode-map "p" 'occur-prev)
+(define-key occur-mode-map "j" 'occur-next)
+(define-key occur-mode-map "k" 'occur-prev)
+
+(define-key grep-mode-map "j" 'next-error-no-select)
+(define-key grep-mode-map "k" 'previous-error-no-select)

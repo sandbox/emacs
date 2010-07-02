@@ -144,7 +144,9 @@
     (setq exec-path (cons "/opt/local/bin" exec-path))
     (setq exec-path (cons "/opt/local/lib/postgresql84/bin" exec-path))
     (setq exec-path (cons "/usr/local/git/bin" exec-path))
+    (setq exec-path (cons "/usr/texbin" exec-path))
     (setenv "PATH" (concat "/usr/local/git/bin:" (getenv "PATH")))
+    (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
     ))
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
