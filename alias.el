@@ -20,6 +20,7 @@
 
 ;;(global-set-key "\C-c;ss" 'shell)
 ;;(global-set-key (kbd "C-'") 'shell)
+(global-set-key "\C-cs" 'shell)
 (global-set-key "\C-c;ss" 'bash-term)
 (global-set-key (kbd "C-'") 'bash-term)
 (global-set-key (kbd "C-x C-'") 'term)
@@ -69,7 +70,7 @@
 (global-set-key "\C-c\C-t" 'toggle-truncate-lines)
 
 (global-set-key "\C-c\C-f" 'grep-find)
-(global-set-key "\C-c;f" 'grep-find)
+(global-set-key "\C-cf" 'grep-find)
 (global-set-key "\M-%" 'query-replace-regexp)
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
@@ -121,5 +122,6 @@
 (define-key occur-mode-map "j" 'occur-next)
 (define-key occur-mode-map "k" 'occur-prev)
 
-(define-key grep-mode-map "j" 'next-error-no-select)
-(define-key grep-mode-map "k" 'previous-error-no-select)
+;; (define-key grep-mode-map "j" 'next-error-no-select)
+;; (define-key grep-mode-map "k" 'previous-error-no-select)
+(global-set-key "\C-c;f" 'follow-mode)
