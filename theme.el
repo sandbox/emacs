@@ -21,7 +21,7 @@
      ;; (buffer-menu-buffer ((t ())))
      ;; (completions-common-part ((t ())))
      ;; (completions-first-difference ((t ())))
-     ;;(cursor ((t ())))
+     ;; (cursor ((t (:foreground "green"))))
      ;; (default ((t (nil))))
 
      (cua-global-mark ((t (:background "blue" :foreground "white"))))

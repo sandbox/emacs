@@ -41,8 +41,8 @@
 ;; (global-set-key "\C-x\C-b" 'switch-to-buffer)
 (global-set-key "\C-x\C-b" 'list-buffers)
 (global-set-key "\C-xnb" 'rename-buffer)
-(global-set-key "\C-cl" 'previous-buffer)
-(global-set-key "\C-cj" 'next-buffer)
+;; (global-set-key "\C-cl" 'previous-buffer)
+;; (global-set-key "\C-cj" 'next-buffer)
 
 (global-set-key (kbd "M-[ 5 c") 'forward-word)
 (global-set-key (kbd "M-[ 5 D") 'backward-word)
@@ -114,14 +114,5 @@
 
 (global-set-key "\C-xr\C-@" 'cua-set-rectangle-mark)
 
-;;
-;; alias for occur/grep mode
-;;
-(define-key occur-mode-map "n" 'occur-next)
-(define-key occur-mode-map "p" 'occur-prev)
-(define-key occur-mode-map "j" 'occur-next)
-(define-key occur-mode-map "k" 'occur-prev)
-
-;; (define-key grep-mode-map "j" 'next-error-no-select)
-;; (define-key grep-mode-map "k" 'previous-error-no-select)
 (global-set-key "\C-c;f" 'follow-mode)
+(global-set-key [backtab] 'table-backward-cell)

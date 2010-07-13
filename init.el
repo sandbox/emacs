@@ -59,27 +59,7 @@
 ;;  Loading modes that didn't come default with emacs
 ;;
 (load-file "~/.emacs.d/modes.el")
-
-;;========================================================================
-;; Hooks
-;;========================================================================
-
-;; Setting some C/C++ mod stuff
-(add-hook 'c-mode-hook
-          '(lambda ()
-             (global-set-key "\C-cr" 'compile)))
-(add-hook 'c++-mode-hook
-          '(lambda ()
-             (global-set-key "\C-cr" 'compile)))
-
-(setq c-default-style "bsd" c-basic-offset 2)
-;;
-
-(add-hook 'tex-mode-hook
-          '(lambda ()
-             (define-key tex-mode-map [f7] 'tex-compile)
-             (setq fill-column 80); where auto-fill should wrap
-             (turn-on-auto-fill)))
+(load-file "~/.emacs.d/hooks.el")
 
 ;;==============================================================================
 ;; Put autosave files (ie #foo#) in one place, *not*
