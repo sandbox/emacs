@@ -17,7 +17,8 @@
           '(lambda ()
              (define-key tex-mode-map [f7] 'tex-compile)
              (setq fill-column 80); where auto-fill should wrap
-             (turn-on-auto-fill)))
+             (turn-on-auto-fill)
+             (flyspell-mode)))
 
 (add-hook 'org-mode-hook
           '(lambda ()

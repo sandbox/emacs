@@ -61,6 +61,8 @@
      ;; (escape-glyph ((t ())))
      ;; (file-name-shadow ((t ())))
      ;; (fixed-patch ((t ())))
+     (flyspell-incorrect ((t (:foreground "red" :background "white" :underline t))))
+     (flyspell-duplicate ((t (:foreground "black" :background "yellow" :underline t))))
      (font-latex-math-face ((t (:foreground "green"))))
      (font-lock-builtin-face ((t (:foreground "cyan"))))
      (font-lock-comment-delimiter-face ((t (:foreground "red")))) 
