@@ -2,3 +2,7 @@
 ;;(global-set-key (kbd "C-x M-[ 5 c") 'other-window)
 ;;(global-set-key (kbd "C-x [down]") 'other-window-1)
 ;;(global-set-key (kbd "C-x M-[ 5 D") 'other-window-1)
+(global-set-key (kbd "M-[ A") 'previous-line)
+(global-set-key (kbd "M-[ B") 'next-line)
+(global-set-key (kbd "M-[ C") 'forward-char)
+(global-set-key (kbd "M-[ D") 'backward-char)

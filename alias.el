@@ -39,7 +39,8 @@
 (global-set-key [(meta f4)] 'save-buffers-kill-emacs)
 
 ;; (global-set-key "\C-x\C-b" 'switch-to-buffer)
-(global-set-key "\C-x\C-b" 'list-buffers)
+;; (global-set-key "\C-x\C-b" 'list-buffers)
+(global-set-key "\C-x\C-b" 'ibuffer)
 (global-set-key "\C-xnb" 'rename-buffer)
 ;; (global-set-key "\C-cl" 'previous-buffer)
 ;; (global-set-key "\C-cj" 'next-buffer)

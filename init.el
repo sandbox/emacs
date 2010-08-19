@@ -16,6 +16,10 @@
   ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(ibuffer-saved-filter-groups nil)
+ '(ibuffer-saved-filters (quote (("builder-stats" ((filename . "main/work_code/builder/public/javascripts"))) ("builder_stats" (filename . "main/work_code/builder/public/javascripts/milkshake/stats/")) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
+ '(ruby-deep-arglist nil)
+ '(ruby-deep-indent-paren nil)
  '(save-place t nil (saveplace))
  '(save-place-limit 20)
  '(scroll-bar-mode nil)
@@ -180,3 +184,5 @@
 
 (setq grep-find-use-xargs t) ;; uses xargs in grep-find
 ;; (cua-mode t)
+
+(put 'dired-find-alternate-file 'disabled nil)
