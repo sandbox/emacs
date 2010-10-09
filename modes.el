@@ -99,8 +99,23 @@
 (setq auto-mode-alist (cons '("\\.tex$" . latex-mode) auto-mode-alist))
 
 ;; figure out how to actually change the default using this for now.
+(setq auto-mode-alist (cons '("\\.ru$" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.rake$" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.gemspec$" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("^Rakefile$" . ruby-mode) auto-mode-alist))
 
 ;; (setq auto-mode-alist (cons '("\\.erb$" . eruby-nxhtml-mumamo-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.erb$" . html-mode) auto-mode-alist))
+
+
+;;
+;; MODES FOR RUBY ON RAILS SHIT
+;;
+(add-to-list 'load-path "~/.emacs.d/lisp/rinari/util")
+(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+(autoload 'inf-ruby-keys "inf-ruby" "" t)
+(eval-after-load 'ruby-mode
+  '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
+
+;; (setq load-path (cons (expand-file-name "~/.emacs.d/rails-reloaded") load-path))
+;; (require 'rails-autoload)

@@ -16,8 +16,8 @@
   ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
- '(ibuffer-saved-filter-groups nil)
- '(ibuffer-saved-filters (quote (("builder-stats" ((filename . "main/work_code/builder/public/javascripts"))) ("builder_stats" (filename . "main/work_code/builder/public/javascripts/milkshake/stats/")) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
+ '(ibuffer-saved-filter-groups (quote (("clients" ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("chef" ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("john" ("clients" (filename . "main/code/clients")) ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))))))
+ '(ibuffer-saved-filters (quote (("clients" (filename . "main/code/clients")) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(save-place t nil (saveplace))
@@ -58,12 +58,6 @@
 (setq font-lock-maximum-decoration t)
 (setq next-screen-context-lines 5)
 (setq-default indent-tabs-mode nil)
-
-;;
-;;  Loading modes that didn't come default with emacs
-;;
-(load-file "~/.emacs.d/modes.el")
-(load-file "~/.emacs.d/hooks.el")
 
 ;;==============================================================================
 ;; Put autosave files (ie #foo#) in one place, *not*
@@ -169,9 +163,10 @@
 ;; ==============================================================================
 ;; window management across sessions
 ;; ==============================================================================
+(require 'switch-window)
+
 (require 'windows)
 (win:startup-with-window)
-
 (autoload 'save-current-configuration "revive" "Save status" t)
 (autoload 'resume "revive" "Resume Emacs" t)
 (autoload 'wipe "revive" "Wipe Emacs" t)
@@ -186,3 +181,10 @@
 ;; (cua-mode t)
 
 (put 'dired-find-alternate-file 'disabled nil)
+
+;;
+;;  Loading modes that didn't come default with emacs
+;;
+(load-file "~/.emacs.d/modes.el")
+(load-file "~/.emacs.d/hooks.el")
+
