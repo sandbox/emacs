@@ -42,8 +42,13 @@
 ;; (global-set-key "\C-x\C-b" 'list-buffers)
 (global-set-key "\C-x\C-b" 'ibuffer)
 (global-set-key "\C-xnb" 'rename-buffer)
-;; (global-set-key "\C-cl" 'previous-buffer)
-;; (global-set-key "\C-cj" 'next-buffer)
+
+(global-set-key "\C-cl" 'windmove-right)
+(global-set-key "\C-cj" 'windmove-left)
+(global-set-key "\C-cn" 'windmove-down)
+(global-set-key "\C-cp" 'windmove-up)
+
+(global-set-key "\C-ci" 'ido-goto-symbol) ; or any key you see fit
 
 (global-set-key (kbd "M-[ 5 c") 'forward-word)
 (global-set-key (kbd "M-[ 5 D") 'backward-word)
