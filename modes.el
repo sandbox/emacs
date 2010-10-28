@@ -119,3 +119,13 @@
 
 ;; (setq load-path (cons (expand-file-name "~/.emacs.d/rails-reloaded") load-path))
 ;; (require 'rails-autoload)
+
+;;
+;; BETTER GIT SUPPORT
+;;
+(require 'magit)
+
+;; 
+;; emacs screen
+;;
+;; (load "elscreen" "ElScreen" t)
