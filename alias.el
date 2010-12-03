@@ -24,7 +24,7 @@
 (global-set-key "\C-c;ss" 'bash-term)
 (global-set-key (kbd "C-'") 'bash-term)
 (global-set-key (kbd "C-x C-'") 'term)
-(global-set-key "\C-c;v" 'viper-mode)
+(global-set-key "\C-c;v" 'toggle-viper-mode)
 
 
 (global-set-key [(control tab)] 'hippie-expand)
@@ -64,15 +64,15 @@
 (global-set-key "\M-n" 'forward-paragraph)
 
 ;; I really dislike this binding
+;; (global-set-key "\C-x\C-x" 'exchange-point-and-mark)
+;; (global-set-key "\C-x\C-p" 'mark-page)
 (global-set-key "\C-x\C-p" nil)
-(global-set-key "\C-m" 'newline-and-indent)
-
+(global-set-key "\C-m" 'newline-and-indent) 
 (global-set-key "\C-xwl" 'highlight-lines-matching-regexp)
 (global-set-key "\C-xwh" 'highlight-regexp)
 (global-set-key "\C-xwr" 'unhighlight-regexp)
 (global-set-key (kbd "C-c C-a") 'align-regexp)
 
-(global-set-key "\C-x\C-x" nil)
 (global-set-key "\C-c\C-t" 'toggle-truncate-lines)
 
 (global-set-key "\C-c\C-f" 'grep-find)
@@ -122,3 +122,8 @@
 
 (global-set-key "\C-c;f" 'follow-mode)
 (global-set-key [backtab] 'table-backward-cell)
+
+(global-set-key "\C-cM" 'magit-status)
+
+;; (define-key viper-vi-intercept-minor-mode (kbd "C-x C-a") 'viper-toggle-key-action)
+;; (define-key viper-insert-diehard-map "\C-x\C-a" 'self-insert-command)

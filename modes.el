@@ -36,6 +36,15 @@
       (append '(("\\.cs$" . csharp-mode)) auto-mode-alist))
 
 ;;========================================================================
+;; shell-mode
+;;========================================================================
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(setq ansi-term-color-vector
+      [unspecified "gray3" "light coral" "pale green" "khaki"
+                   "RoyalBlue2" "MediumPurple1" "sky blue" "gray98"])
+
+;;========================================================================
 ;; MATLAB
 ;;========================================================================
 (autoload 'matlab-mode "~/.emacs.d/matlab.el" "Enter Matlab mode." t)
@@ -111,11 +120,14 @@
 ;;
 ;; MODES FOR RUBY ON RAILS SHIT
 ;;
+(require 'ruby-electric)
+
 (add-to-list 'load-path "~/.emacs.d/lisp/rinari/util")
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
 (autoload 'inf-ruby-keys "inf-ruby" "" t)
 (eval-after-load 'ruby-mode
   '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
+(add-hook 'ruby-mode-hook 'ruby-electric-mode)
 
 ;; (setq load-path (cons (expand-file-name "~/.emacs.d/rails-reloaded") load-path))
 ;; (require 'rails-autoload)
@@ -125,7 +137,49 @@
 ;;
 (require 'magit)
 
-;; 
-;; emacs screen
 ;;
-;; (load "elscreen" "ElScreen" t)
+;; textmate
+;;
+;; (add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+;; (require 'textmate)
+;; (textmate-mode)
+
+
+;; ==============================================================================
+;; window management across sessions
+;; ==============================================================================
+(require 'switch-window)
+
+(require 'windows)
+(win:startup-with-window)
+(autoload 'save-current-configuration "revive" "Save status" t)
+(autoload 'resume "revive" "Resume Emacs" t)
+(autoload 'wipe "revive" "Wipe Emacs" t)
+
+;; testing out the ido mode
+(ido-mode t)
+(setq ido-enable-flex-matching t) ;; enable fuzzy matching
+
+(setq grep-find-use-xargs t) ;; uses xargs in grep-find
+;; (cua-mode t)
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+;;
+;;  Loading modes that didn't come default with emacs
+;;
+
+
+(defun viper-cua-region-fix()
+  (define-key viper-vi-global-user-map [backspace] 'backward-delete-char-untabify)
+  (define-key viper-vi-global-user-map "\C-d" 'delete-char)
+  (define-key viper-insert-global-user-map [backspace] 'backward-delete-char-untabify)
+  (define-key viper-insert-global-user-map "\C-d" 'delete-char))
+(eval-after-load 'viper '(viper-cua-region-fix))
+
+(require 'vimpulse)
+
+;;
+;; Loading a wrap region to enclose text in parentheses and shit!
+;;
+(require 'wrap-region)

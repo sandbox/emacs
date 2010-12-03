@@ -17,7 +17,7 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(ibuffer-saved-filter-groups (quote (("clients" ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("chef" ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("john" ("clients" (filename . "main/code/clients")) ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))))))
- '(ibuffer-saved-filters (quote (("clients" (filename . "main/code/clients")) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
+ '(ibuffer-saved-filters (quote (("gluestick_vm" (filename . "main/code/gluestick_vm")) ("clients" (filename . "main/code/clients")) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(save-place t nil (saveplace))
@@ -27,7 +27,12 @@
  '(show-paren-mode t)
  '(standard-indent 4)
  '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120)))
- '(text-mode-hook (quote (text-mode-hook-identify))))
+ '(text-mode-hook (quote (text-mode-hook-identify)))
+ '(viper-always nil)
+ '(viper-emacs-state-mode-list (quote (Custom-mode dired-mode efs-mode tar-mode browse-kill-ring-mode recentf-mode recentf-dialog-mode occur-mode mh-folder-mode gnus-group-mode gnus-summary-mode completion-list-mode Info-mode compilation-mode rcirc-mode jde-javadoc-checker-report-mode view-mode vm-mode vm-summary-mode erc-mode eshell-mode shell-mode)))
+ '(viper-fast-keyseq-timeout 0)
+ '(viper-insert-state-mode-list (quote (internal-ange-ftp-mode comint-mode gud-mode inferior-emacs-lisp-mode)))
+ '(viper-vi-state-mode-list (quote (dired-mode help-mode Buffer-menu-mode fundamental-mode makefile-mode awk-mode m4-mode xrdb-mode winmgr-mode autoconf-mode cvs-edit-mode html-mode html-helper-mode emacs-lisp-mode lisp-mode lisp-interaction-mode jde-mode java-mode cc-mode c-mode c++-mode objc-mode fortran-mode f90-mode basic-mode bat-mode asm-mode prolog-mode flora-mode sql-mode text-mode indented-text-mode tex-mode latex-mode bibtex-mode ps-mode diff-mode idl-mode perl-mode cperl-mode javascript-mode tcl-mode python-mode sh-mode ksh-mode csh-mode gnus-article-mode mh-show-mode ruby-mode))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -127,64 +132,14 @@
     (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
     ))
 
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-(setq ansi-term-color-vector
-      [unspecified "gray3" "light coral" "pale green" "khaki"
-                   "RoyalBlue2" "MediumPurple1" "sky blue" "gray98"])
-
-;;
-;; Sets my aliases last has stuff specific for terminal or window
-;;
 (load-file "~/.emacs.d/alias.el")
-(if (not window-system)
-    (progn
-      (load-file "~/.emacs.d/theme.el")
-      (my-terminal-color-theme))
-  (progn
-    (load-file "~/.emacs.d/window-theme.el")
-    (my-color-theme)
-    ;; some stupid mac shit
-    (set-face-attribute 'region nil :background "gray20")
-    (global-hl-line-mode 1)
-    (setq default-frame-alist
-	  (append
-	   '((cursor-type . (bar . 1)))
-           default-frame-alist))
-    (set-default-font "-*-DejaVu Sans Mono-*-*-*-*-14-*-*-*-m-0-iso10646-1")
-    (if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))))
+(load-file "~/.emacs.d/theme.el")
+(my-terminal-color-theme)
+(load-file "~/.emacs.d/modes.el")
+(load-file "~/.emacs.d/hooks.el")
 
 ;; for emailing with emacs!
 (setq mail-archive-file-name "~/.emacs.d/sentmail")
 (defconst user-mail-address "johnle@cs.stanford.edu")
 
 (set-register ?e '(file . "~/.emacs.d/init.el"))
-
-;; ==============================================================================
-;; window management across sessions
-;; ==============================================================================
-(require 'switch-window)
-
-(require 'windows)
-(win:startup-with-window)
-(autoload 'save-current-configuration "revive" "Save status" t)
-(autoload 'resume "revive" "Resume Emacs" t)
-(autoload 'wipe "revive" "Wipe Emacs" t)
-
-;;;(define-key ctl-x-map "C" 'see-you-again)
-
-;; testing out the ido mode
-(ido-mode t)
-(setq ido-enable-flex-matching t) ;; enable fuzzy matching
-
-(setq grep-find-use-xargs t) ;; uses xargs in grep-find
-;; (cua-mode t)
-
-(put 'dired-find-alternate-file 'disabled nil)
-
-;;
-;;  Loading modes that didn't come default with emacs
-;;
-(load-file "~/.emacs.d/modes.el")
-(load-file "~/.emacs.d/hooks.el")
-
