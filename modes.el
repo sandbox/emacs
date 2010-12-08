@@ -169,7 +169,6 @@
 ;;  Loading modes that didn't come default with emacs
 ;;
 
-
 (defun viper-cua-region-fix()
   (define-key viper-vi-global-user-map [backspace] 'backward-delete-char-untabify)
   (define-key viper-vi-global-user-map "\C-d" 'delete-char)
@@ -183,3 +182,5 @@
 ;; Loading a wrap region to enclose text in parentheses and shit!
 ;;
 (require 'wrap-region)
+
+(require 'haml-mode)
