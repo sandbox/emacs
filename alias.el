@@ -127,3 +127,13 @@
 
 ;; (define-key viper-vi-intercept-minor-mode (kbd "C-x C-a") 'viper-toggle-key-action)
 ;; (define-key viper-insert-diehard-map "\C-x\C-a" 'self-insert-command)
+
+(defun viper-save ()
+  (interactive)
+  (if (eq viper-current-state 'emacs-state)
+      (save-buffer)
+    (progn
+      (viper-exit-insert-state)
+      (save-buffer))))
+
+(global-set-key "\C-x\C-s" 'viper-save)

@@ -182,5 +182,6 @@
 ;; Loading a wrap region to enclose text in parentheses and shit!
 ;;
 (require 'wrap-region)
+(wrap-region-global-mode)
 
 (require 'haml-mode)
