@@ -160,7 +160,8 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 
-(setq grep-find-use-xargs t) ;; uses xargs in grep-find
+;;(setq grep-find-use-xargs t) ;; uses xargs in grep-find
+;; (setq grep-find-use-xargs nil)
 ;; (cua-mode t)
 
 (put 'dired-find-alternate-file 'disabled nil)
@@ -173,7 +174,8 @@
   (define-key viper-vi-global-user-map [backspace] 'backward-delete-char-untabify)
   (define-key viper-vi-global-user-map "\C-d" 'delete-char)
   (define-key viper-insert-global-user-map [backspace] 'backward-delete-char-untabify)
-  (define-key viper-insert-global-user-map "\C-d" 'delete-char))
+  (define-key viper-insert-global-user-map "\C-d" 'delete-char)
+  (define-key viper-vi-global-user-map "\C-e" 'viper-goto-eol))
 (eval-after-load 'viper '(viper-cua-region-fix))
 
 (require 'vimpulse)

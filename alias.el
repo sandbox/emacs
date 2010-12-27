@@ -136,4 +136,13 @@
       (viper-exit-insert-state)
       (save-buffer))))
 
+(defun viper-keyboard-quit ()
+  (interactive)
+  (if (eq viper-current-state 'emacs-state)
+      (keyboard-quit)
+    (progn
+      (viper-exit-insert-state)
+      (keyboard-quit))))
+
 (global-set-key "\C-x\C-s" 'viper-save)
+(global-set-key "\C-g" 'viper-keyboard-quit)

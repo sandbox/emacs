@@ -19,8 +19,10 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(css-indent-offset 2)
- '(ibuffer-saved-filter-groups (quote (("clients" ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("chef" ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("john" ("clients" (filename . "main/code/clients")) ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))))))
- '(ibuffer-saved-filters (quote (("gluestick_vm" (filename . "main/code/gluestick_vm")) ("clients" (filename . "main/code/clients")) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
+ '(grep-find-command "find . -type f -print | xargs -n1 grep -nH -e ")
+ '(grep-find-template "find . <X> -type f <F> -print | xargs -n1 grep <C> -nH -e <R>")
+ '(ibuffer-saved-filter-groups (quote (("c2_vm" ("gluestick_vm" (filename . "main/code/gluestick_vm")) ("clients" (filename . "main/code/clients")) ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("gluestick_vm" ("clients" (filename . "main/code/clients")) ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("clients" ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("chef" ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))) ("john" ("c2_vm" (filename . "main/code/c2")) ("gluestick_vm" (filename . "main/code/gluestick_vm")) ("clients" (filename . "main/code/clients")) ("gluestick" (filename . "main/code/gluestick")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("shell" (mode . shell-mode)) ("builder" (filename . "main/code/builder"))))))
+ '(ibuffer-saved-filters (quote (("gluestick_vm" (saved . "gluestick_vm") (filename . "main/code/gluestick_vm")) ("clients" (filename . "main/code/clients")) ("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode)))))))
  '(ruby-deep-arglist nil)
  '(ruby-deep-indent-paren nil)
  '(save-place t nil (saveplace))
@@ -60,6 +62,10 @@
 (delete-selection-mode t)
 (setq comment-style 'indent)
 (setq scroll-conservatively 10000)
+
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-ignore-buffers-re "^\\*")
 
 ;;enable syntax highlight by default
 (global-font-lock-mode t)
