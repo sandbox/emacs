@@ -1,0 +1,6 @@
+#name : before(symbol) do ... end
+#group : block
+# --
+before($0) do
+  $1
+end

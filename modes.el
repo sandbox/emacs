@@ -10,6 +10,7 @@
 ;;========================================================================
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
+(require 'yasnippet_extensions)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
@@ -67,6 +68,10 @@
   (setq fill-column 76); where auto-fill should wrap
   (font-lock-mode 1))
 (setq matlab-shell-mode-hook 'my-matlab-shell-mode-hook)
+
+;;========================================================================
+;; Latex
+;;========================================================================
 
 
 ;;========================================================================
@@ -175,7 +180,10 @@
   (define-key viper-vi-global-user-map "\C-d" 'delete-char)
   (define-key viper-insert-global-user-map [backspace] 'backward-delete-char-untabify)
   (define-key viper-insert-global-user-map "\C-d" 'delete-char)
-  (define-key viper-vi-global-user-map "\C-e" 'viper-goto-eol))
+  (define-key viper-vi-global-user-map "\C-e" 'viper-goto-eol)
+  (define-key viper-vi-basic-map "p" 'vimpulse-Put-and-indent)
+  (define-key viper-vi-basic-map "P" 'vimpulse-put-and-indent)
+  )
 (eval-after-load 'viper '(viper-cua-region-fix))
 
 (require 'vimpulse)

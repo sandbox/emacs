@@ -146,3 +146,5 @@
 
 (global-set-key "\C-x\C-s" 'viper-save)
 (global-set-key "\C-g" 'viper-keyboard-quit)
+
+(global-set-key "\C-cw" 'whitespace-cleanup)
