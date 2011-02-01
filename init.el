@@ -1,3 +1,7 @@
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/color-theme")
 (add-to-list 'load-path "~/.emacs.d/lisp")
@@ -45,16 +49,7 @@
   ;; If there is more than one, they won't work right.
  )
 
-(setq initial-frame-alist
-      `((menu-bar-lines . 0)
-        (tool-bar-lines . 0)
-        (cursor-type . bar)
-        (mouse-color . "grey")))
-;; default-frame-alist is defined in terms of initial-frame-alist.  Don't
-;; use copy-sequence here -- it doesn't copy the list elements, just the
-;; list's cons cells.  Use copy-alist instead.
-(setq default-frame-alist (copy-alist initial-frame-alist))
-
+(menu-bar-mode 0)
 (setq inhibit-startup-message t)
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
@@ -147,6 +142,7 @@
 (my-terminal-color-theme)
 (load-file "~/.emacs.d/modes.el")
 (load-file "~/.emacs.d/hooks.el")
+(load-file "~/.emacs.d/packages.el")
 
 ;; for emailing with emacs!
 (setq mail-archive-file-name "~/.emacs.d/sentmail")

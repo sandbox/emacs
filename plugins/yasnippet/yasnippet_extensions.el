@@ -2,7 +2,7 @@
 
 (defun insert_yardoc_comments_for_arguments ()
   (save-excursion
-    (re-search-forward "def \\([a-zA-Z_0-9?!]+\\)" nil t)
+    (re-search-forward "def \\([a-zA-Z_0-9.?!]+\\)" nil t)
     (match-data)
     (let ((method-name (buffer-substring (match-beginning 1) (match-end 1)))
           ;; this assumes that ruby methods are defined on a single line
@@ -21,7 +21,7 @@
 
 (defun insert_rdoc_comments_for_arguments ()
   (save-excursion
-    (re-search-forward "def \\([a-zA-Z_0-9?!]+\\)" nil t)
+    (re-search-forward "def \\([a-zA-Z_0-9.?!]+\\)" nil t)
     (match-data)
     (let ((method-name (buffer-substring (match-beginning 1) (match-end 1)))
           ;; this assumes that ruby methods are defined on a single line

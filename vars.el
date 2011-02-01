@@ -6,3 +6,7 @@
                        (concat "%" (number-to-string w) "d "))
                      line)
                     'face 'linum)))
+
+(setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
+
