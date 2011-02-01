@@ -1,6 +1,6 @@
-;; (load "~/.emacs.d/el-get/el-get/el-get.elc")
+(load "~/.emacs.d/el-get/el-get/el-get.elc")
 
-;; (require 'el-get)
+(require 'el-get)
 
 ;; ;; Figure these out later
 ;; (setq el-get-sources '(
