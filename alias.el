@@ -43,10 +43,10 @@
 (global-set-key "\C-x\C-b" 'ibuffer)
 (global-set-key "\C-xnb" 'rename-buffer)
 
-(global-set-key "\C-cl" 'windmove-right)
-(global-set-key "\C-cj" 'windmove-left)
-(global-set-key "\C-cn" 'windmove-down)
-(global-set-key "\C-cp" 'windmove-up)
+(global-set-key [(right)] 'windmove-right)
+(global-set-key [(left)] 'windmove-left)
+(global-set-key [(down)] 'windmove-down)
+(global-set-key [(up)] 'windmove-up)
 
 (global-set-key "\C-ci" 'ido-goto-symbol) ; or any key you see fit
 

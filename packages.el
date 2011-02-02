@@ -22,4 +22,11 @@
 
 ;;                  ))
 
-;; (el-get)
+(setq
+ el-get-sources
+ '(rspec-mode
+   ;; elpa
+   
+                       ))
+
+(el-get)
