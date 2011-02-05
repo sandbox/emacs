@@ -16,3 +16,4 @@ elpa/builtin-packages
 elpa/archive-contents
 elpa/**/*.el
 el-get
+history
