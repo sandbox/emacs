@@ -7,7 +7,6 @@
 (load-file "~/.emacs.d/settings.el")
 (load-file "~/.emacs.d/functions.el")
 (load-file "~/.emacs.d/themes.el")
-(load-file "~/.emacs.d/hooks.el")
 (load-file "~/.emacs.d/alias.el")
 (load-file "~/.emacs.d/locals.el")
 
