@@ -3,7 +3,6 @@ emacs_backups
 emacs_autosaves
 auto-save-list
 server
-puttycolors.txt
 games
 README
 *.elc

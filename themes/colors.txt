@@ -1,0 +1,22 @@
+default foreground: 179	179	179
+default bold fg   : 255	128	0
+default background: 0	0	0 
+default bold bg   : 85	85	85
+cursor text       : 0	0 	0
+cursor colour     : 0	255	0
+black             : 0	0	0
+black bold        : 85	85	85
+red               : 187	45	45
+red bold          : 255	85	85
+green             : 0	187	62
+green bold        : 85	255	85
+yellow            : 187	187	62
+yellow bold       : 255	255	85
+blue              : 99	137	216
+bold blue         : 85	85	255
+magenta           : 204	102	204
+magenta bold      : 255	85	255
+cyan              : 101	179	224
+cyan bold         : 85	255	255
+white             : 255	255	255
+white bold        : 255	255	255
