@@ -1,9 +1,0 @@
-#name : comment yardoc
-#binding: "C-c y"
-#group : comments
-# --
-#
-# ${1:method description}
-#`(insert_yardoc_comments_for_arguments)`
-#
-# @return $0

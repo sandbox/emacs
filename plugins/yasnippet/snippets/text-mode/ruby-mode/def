@@ -1,6 +1,0 @@
-#name : def function() do ... end
-#group : function
-# --
-def ${fname}()
-  $0
-end

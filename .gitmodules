@@ -1,3 +1,0 @@
-[submodule "lisp/haml-mode"]
-	path = lisp/haml-mode
-	url = https://github.com/nex3/haml-mode.git

@@ -15,3 +15,6 @@ url/*
 elpa/builtin-packages
 elpa/archive-contents
 elpa/**/*.el
+el-get/el-get
+el-get
+el-get/*

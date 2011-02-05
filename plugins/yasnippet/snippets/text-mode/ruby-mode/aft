@@ -1,6 +1,0 @@
-#name : after(symbol) do ... end
-#group : block
-# --
-after($0) do
-  $1
-end

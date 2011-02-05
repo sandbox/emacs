@@ -1,5 +1,3 @@
-(provide 'yasnippet_extensions)
-
 (defun insert_yardoc_comments_for_arguments ()
   (save-excursion
     (re-search-forward "def \\([a-zA-Z_0-9.?!]+\\)" nil t)
@@ -37,3 +35,5 @@
       )
     )
   )
+
+(provide 'yasnippet_extensions)
