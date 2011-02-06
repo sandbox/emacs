@@ -20,3 +20,43 @@ cyan              : 101	179	224
 cyan bold         : 85	255	255
 white             : 255	255	255
 white bold        : 255	255	255
+
+colors used to make my emacs color theme
+black         : 26   26   26   : #1a1a1a : grey10
+red           : 255  48   48   : #ff3030 : firebrick1
+green         : 0    238  118  : #00ee76 : SpringGreen2
+yellow        : 238  220  130  : #eedc82 : LightGoldenrod2
+blue          : 30   144  254  : #1e90fe : DodgerBlue1
+magenta       : 209  95   238  : #d15fee : MediumOrchid2
+cyan          : 0    229  238  : #00e5ee : turquoise2
+white         : 229  229  229  : #e5e5e5 : grey90
+brightblack   : 64   64   64   : #404040 : grey25
+brightred     : 255  0    0    : #ff0000 : red1
+brightgreen   : 0    205  0    : #00cd00 : green3
+brightyellow  : 205  205  0    : #cdcd00 : yellow3
+brightblue    : 126  192  238  : #7ec0ee : SkyBlue2
+brightmagenta : 255  0    255  : #ff00ff : magenta1
+brightcyan    : 0    205  205  : #00cdcd : cyan3
+brightwhite   : 255  255  255  : #ffffff : grey100
+bold          : 255  127  255  : #ff7f00 : DarkOrange1
+selection     : 25   25   112  : #191970 : Midnight Blue
+
+(background-color . "#1c1c1c")
+(background-mode . dark)
+(border-color . "#1c1c1c")
+(cursor-color . "#00ff00")
+(foreground-color . "#d0d0d0")
+(mouse-color . "black")
+(fringe ((t (:background "#1c1c1c"))))
+(mode-line ((t (:foreground "#000000" :background "#ffffff"))))
+(region ((t (:background "#000000"))))
+(font-lock-builtin-face ((t (:foreground "#875f5f"))))
+(font-lock-comment-face ((t (:foreground "#ff3030"))))
+(font-lock-function-name-face ((t (:foreground "#d787ff"))))
+(font-lock-keyword-face ((t (:foreground "#ff7800"))))
+(font-lock-string-face ((t (:foreground "#8787ff"))))
+(font-lock-type-face ((t (:foreground"#00e5ee"))))
+(font-lock-constant-face ((t (:foreground "#ffff5f"))))
+(font-lock-variable-name-face ((t (:foreground "#5faf5f"))))
+(minibuffer-prompt ((t (:foreground "#af87d7" :bold t))))
+(font-lock-warning-face ((t (:foreground "red" :bold t))))
