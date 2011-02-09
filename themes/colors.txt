@@ -24,7 +24,7 @@ white bold        : 255	255	255
 colors used to make my emacs color theme
 black         : 26   26   26   : #1a1a1a : grey10
 red           : 255  48   48   : #ff3030 : firebrick1
-green         : 0    238  118  : #00ee76 : SpringGreen2
+green         : 0    238  118  : #00ee76 : SpringGreen3
 yellow        : 238  220  130  : #eedc82 : LightGoldenrod2
 blue          : 30   144  254  : #1e90fe : DodgerBlue1
 magenta       : 209  95   238  : #d15fee : MediumOrchid2
