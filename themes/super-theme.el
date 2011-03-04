@@ -232,7 +232,7 @@
           ;; (highlight                           ((t ())))
           ;; (highlight-changes                   ((t ())))
           ;; (highlight-changes-delete            ((t ())))
-          ;; (highlight-current-line-face         ((t ())))
+          ;; `(highlight-current-line-face         ((t (:background ,john-gray-3))))
           ;; (hl-line                             ((t ())))
 
           ;; (ido-first-match                     ((t ())))

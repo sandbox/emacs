@@ -16,3 +16,5 @@ elpa/archive-contents
 elpa/**/*.el
 el-get
 history
+/.emacs.desktop
+/.emacs.desktop.lock
