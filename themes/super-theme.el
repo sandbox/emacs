@@ -317,7 +317,7 @@
           `(mode-line                           ((t (:background ,john-white :foreground ,john-black))))
           ;; (mode-line-buffer-id                 ((t ())))
           ;; (mode-line-emphasis                  ((t ())))
-          ;; (mode-line-highlight                 ((t ())))
+          `(mode-line-highlight                 ((t (:background ,john-white :foreground ,john-gray-3))))
           `(mode-line-inactive                  ((t (:background ,john-gray-1 :foreground ,john-white))))
           ;; (modeline-mousable                   ((t ())))
           ;; (modeline-mousable-minor-mode        ((t ())))
@@ -330,7 +330,7 @@
           ;; (mumamo-background-chunk-submode3    ((t ())))
           ;; (mumamo-background-chunk-submode4    ((t ())))
 
-          ;; (next-error                          ((t ())))
+          `(next-error                          ((t (:background ,john-gray-2 :foreground ,john-fg))))
           ;; (nobreak-space                       ((t ())))
           ;; (outline-1                           ((t ())))
           ;; (outline-2                           ((t ())))
@@ -388,7 +388,7 @@
           ;; (widget-single-line-field            ((t ())))
 
           ;; (yas/field-debug-face                ((t ())))
-          ;; (yas/field-highlight-face            ((t ())))
+          `(yas/field-highlight-face            ((t (:background ,john-red :foreground ,john-gray-3))))
 
           ;; (zmacs-region                        ((t ())))
 
