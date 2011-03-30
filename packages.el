@@ -39,8 +39,8 @@
         haml-mode
 	sass-mode
 
-        ;; haskell-mode
-        ;; hs-lint
+        haskell-mode
+        hs-lint
         json
         lua-mode
         ;; magit
