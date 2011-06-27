@@ -43,7 +43,7 @@
         hs-lint
         json
         lua-mode
-        ;; magit
+        magit
 
         ;; matlab-mode
         mode-compile
@@ -75,12 +75,13 @@
         ))
 
 (el-get)
-
 ;;
 ;; Load modes that emacs doesn't have and el-get doesn't properly
 ;; install
 ;;
-(load "~/.emacs.d/lisp/magit.el")
+;; (load "~/.emacs.d/lisp/magit.el")
+(add-to-list 'load-path "~/.emacs.d/el-get/magit/contrib")
 (load "~/.emacs.d/lisp/matlab.el")
 (load "~/.emacs.d/lisp/csharp-mode.el")
 
+(require 'scratch)

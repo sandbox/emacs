@@ -95,3 +95,4 @@
 (define-key global-map "\C-g" 'viper-keyboard-quit)
 
 (define-key global-map "\C-cw" 'whitespace-cleanup)
+(define-key global-map "\C-xs" 'viper-save)

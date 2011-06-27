@@ -33,9 +33,9 @@ safe-local-variable-values."
 
 ;; builder directory local variables
 (dir-locals-safe "~/C2/builder" 
-                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/builder && bin/spec")))))
+                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/builder && NO_BUNDLE=true MERB_ENV=test_vm bin/spec")))))
 
 ;; gluestick directory local variables
 (dir-locals-safe "~/C2/gluestick" 
-                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/gluestick && VERBOSE=true GLUESTICK_ENV=test_local_vm bundle exec spec")
+                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/gluestick && VERBOSE=true RACKUP_ENV=test_local_vm GLUESTICK_ENV=test_local_vm bundle exec spec")
                                  (tags-file-name . "~/C2/gluestick/TAGS")))))
