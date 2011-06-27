@@ -1,2 +1,2 @@
 (require 'magit)
-(require 'magit-simple-keys)
+;; (require 'magit-simple-keys)
