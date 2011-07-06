@@ -12,6 +12,10 @@ With a prefix-arg, the merge will be squashed.
              (magit-rev-to-git revision)
              '("--no-ff"))))
 
+(defun magit-log-all (&optional arg)
+  (interactive "P")
+  (magit-display-log arg "--all"))
+
 (setq magit-mode-map
       (let ((map (make-keymap)))
         (suppress-keymap map t)
@@ -59,7 +63,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "B") 'magit-create-branch)
         (define-key map (kbd "F") 'magit-pull)
         (define-key map (kbd "l") 'magit-log)
-        (define-key map (kbd "L") 'magit-log)
+        (define-key map (kbd "L") 'magit-log-all)
         map))
 
 (setq magit-status-mode-map
