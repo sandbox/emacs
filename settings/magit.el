@@ -8,9 +8,9 @@ With a prefix-arg, the merge will be squashed.
    (list (magit-read-rev "Merge (Manually)" (magit-default-rev))))
   (if revision
       (apply 'magit-run-git
-             "merge --no-ff"
+             "merge"
              (magit-rev-to-git revision)
-             magit-custom-options)))
+             '("--no-ff"))))
 
 (setq magit-mode-map
       (let ((map (make-keymap)))
