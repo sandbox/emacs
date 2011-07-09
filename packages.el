@@ -50,10 +50,11 @@
         php-mode
         processing-mode
 
-	python-mode
-        pymacs
+        python.el
+	;; python-mode
+        ;; pymacs
 	;; ipython
-        django-mode
+        ;; django-mode
 
 	el-expectations
         rspec-mode

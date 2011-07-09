@@ -22,6 +22,9 @@
 (defvar backup-dir (concat "~/.emacs.d/emacs_backups/" (user-login-name) "/"))
 
 (menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (setq backup-directory-alist (list (cons "." backup-dir))
@@ -36,7 +39,6 @@
       mac-option-modifier 'super
       next-screen-context-lines 5
       save-place-limit 20
-      scroll-bar-mode nil
       scroll-conservatively 10000
       shift-select-mode nil
       show-paren-mode t
