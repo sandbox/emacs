@@ -12,7 +12,6 @@
 ;;   darcs
 ;;   bzr
 ;;   git
-
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
                          ("gnu" . "http://elpa.gnu.org/packages/")))
 
@@ -50,7 +49,7 @@
         php-mode
         processing-mode
 
-        python.el
+        python
 	;; python-mode
         ;; pymacs
 	;; ipython
@@ -67,15 +66,17 @@
         yasnippet
         
         ;; elpa
-	(:name dired-isearch :type elpa)
-        (:name htmlize :type elpa)
-        (:name kill-ring-search :type elpa)
-        (:name slime :type elpa)
-        (:name ruby-mode :type elpa)
 
+        dired-isearch
+        htmlize
+        kill-ring-search
+        slime
+        ruby-mode
         ))
 
 (el-get)
+;; (mapc 'el-get-install el-get-sources)
+
 ;;
 ;; Load modes that emacs doesn't have and el-get doesn't properly
 ;; install
