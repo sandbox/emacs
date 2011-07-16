@@ -67,14 +67,17 @@
         
         ;; elpa
 
-        dired-isearch
-        htmlize
-        kill-ring-search
-        slime
-        ruby-mode
+	(:name dired-isearch :type elpa)
+        (:name htmlize :type elpa)
+        (:name kill-ring-search :type elpa)
+        (:name slime :type elpa)
+        (:name ruby-mode :type elpa)
         ))
 
-(el-get)
+(setq my-packages
+      (mapcar 'el-get-source-name el-get-sources))
+
+(el-get 'sync my-packages)
 ;; (mapc 'el-get-install el-get-sources)
 
 ;;

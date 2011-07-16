@@ -22,8 +22,8 @@
 (defvar backup-dir (concat "~/.emacs.d/emacs_backups/" (user-login-name) "/"))
 
 (menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
+(setq tool-bar-mode nil)
+(setq scroll-bar-mode nil)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
