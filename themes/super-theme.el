@@ -372,7 +372,7 @@
           ;; (underline                           ((t (:underline t))))
 
           ;; (variable-pitch                      ((t ())))
-          ;; (vertical-border                     ((t ())))
+          `(vertical-border                     ((t (:background ,john-gray-1 :foreground ,john-gray-0))))
 
           ;; (viper-minibuffer-emacs              ((t ())))
           ;; (viper-minibuffer-insert             ((t ())))

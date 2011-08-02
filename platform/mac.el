@@ -8,9 +8,13 @@
 (setq exec-path (cons "/usr/local/git/bin" exec-path))
 (setq exec-path (cons "/usr/texbin" exec-path))
 (setq exec-path (cons "/usr/local/bin" exec-path))
+(setq exec-path (cons "/Users/john/C2/scala" exec-path))
+(setq exec-path (cons "/Users/john/C2/scala/scala/bin" exec-path))
 (setenv "PATH" (concat "/usr/local/git/bin:" (getenv "PATH")))
 (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setenv "PATH" (concat (getenv "PATH") ":/Users/john/C2/scala/scala/bin"))
+(setenv "PATH" (concat (getenv "PATH") ":/Users/john/C2/scala"))
 
 ;;
 ;; someone's blog on copy and pasting between mac and emacs
