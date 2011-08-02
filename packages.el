@@ -59,6 +59,7 @@
         rspec-mode
 
         scala-mode
+        ensime
         scratch
         vimpulse
         wrap-region
