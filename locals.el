@@ -39,3 +39,7 @@ safe-local-variable-values."
 (dir-locals-safe "~/C2/gluestick" 
                  '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/gluestick && VERBOSE=true RACKUP_ENV=test_local_vm GLUESTICK_ENV=test_local_vm bundle exec spec")
                                  (tags-file-name . "~/C2/gluestick/TAGS")))))
+
+(dir-locals-safe "~/C2/gluestick-alpha"
+                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/gluestick-alpha && VERBOSE=true bundle exec rspec")
+                                 (tags-file-name . "~/C2/gluestick-alpha/TAGS")))))
