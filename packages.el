@@ -65,6 +65,8 @@
         wrap-region
         yaml-mode
         yasnippet
+
+        full-ack
         
         ;; elpa
 
