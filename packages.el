@@ -23,6 +23,7 @@
 (setq el-get-sources
       '(
         package
+        cedet
 
         caml-mode
         clojure-mode
@@ -37,6 +38,7 @@
         markdown-mode
         haml-mode
 	sass-mode
+        scss-mode
 
         haskell-mode
         hs-lint
@@ -74,7 +76,9 @@
         (:name htmlize :type elpa)
         (:name kill-ring-search :type elpa)
         (:name slime :type elpa)
+        (:name slime-repl :type elpa)
         (:name ruby-mode :type elpa)
+        (:name paredit :type elpa)
         ))
 
 (setq my-packages

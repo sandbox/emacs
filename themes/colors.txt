@@ -32,6 +32,7 @@ cyan          : 0    229  238  : #00e5ee : turquoise2
 white         : 229  229  229  : #e5e5e5 : grey90
 brightblack   : 64   64   64   : #404040 : grey25
 brightred     : 255  0    0    : #ff0000 : red1
+brightred     : 255  85    85  : #ff0000 : red1
 brightgreen   : 0    205  0    : #00cd00 : green3
 brightyellow  : 205  205  0    : #cdcd00 : yellow3
 brightblue    : 126  192  238  : #7ec0ee : SkyBlue2
