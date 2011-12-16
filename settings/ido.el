@@ -1,8 +1,19 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 
-(setq ibuffer-saved-filter-groups (quote (("john" ("gluestick" (or (filename . "main/code/gluestick") (filename . "C2/gluestick"))) ("c2_vm" (filename . "main/code/c2")) ("clients" (filename . "main/code/clients")) ("microsoft" (filename . "main/jobs/Microsoft")) ("skunkworks" (filename . "main/code/skunkworks")) ("magit" (mode . magit-mode)) ("shell" (mode . shell-mode)) ("emacs" (filename . ".emacs.d")) ("builder" (or (filename . "main/code/builder") (filename ."C2/builder"))))))
-      ibuffer-saved-filters (quote (("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode)))) ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode))))))
+(setq ibuffer-saved-filter-groups (quote (("john"
+                                           ("groupsage" (or (filename . "C2/groupsage") (filename . "groupsage")))
+                                           ("gluestick" (or (filename . "main/code/gluestick") (filename . "C2/gluestick")))
+                                           ("c2_vm" (filename . "main/code/c2"))
+                                           ("clients" (filename . "main/code/clients"))
+                                           ("microsoft" (filename . "main/jobs/Microsoft"))
+                                           ("skunkworks" (filename . "main/code/skunkworks"))
+                                           ("magit" (mode . magit-mode))
+                                           ("shell" (mode . shell-mode))
+                                           ("emacs" (filename . ".emacs.d"))
+                                           ("builder" (or (filename . "main/code/builder") (filename ."C2/builder"))))))
+      ibuffer-saved-filters (quote (("gnus" ((or (mode . message-mode) (mode . mail-mode) (mode . gnus-group-mode) (mode . gnus-summary-mode) (mode . gnus-article-mode))))
+                                    ("programming" ((or (mode . emacs-lisp-mode) (mode . cperl-mode) (mode . c-mode) (mode . java-mode) (mode . idl-mode) (mode . lisp-mode))))))
       )
 
 (defun ido-goto-symbol (&optional symbol-list)

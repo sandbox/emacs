@@ -11,6 +11,4 @@
      (defun clojure-indent-hook ()
        (define-clojure-indent (clone-for 1) (at 1)))
      (add-hook 'clojure-mode-hook 'clojure-indent-hook)
-     (define-key clojure-mode-map "{" 'paredit-open-curly)
-     (define-key clojure-mode-map "}" 'paredit-close-curly)
 ))
