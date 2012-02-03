@@ -13,7 +13,8 @@
 ;;   bzr
 ;;   git
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
-                         ("gnu" . "http://elpa.gnu.org/packages/")))
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (load "~/.emacs.d/el-get/el-get/el-get.elc")
 
@@ -79,6 +80,7 @@
         (:name slime-repl :type elpa)
         (:name ruby-mode :type elpa)
         (:name paredit :type elpa)
+        ;; (:name less-css-mode :type elpa)
         ))
 
 (setq my-packages
@@ -95,5 +97,7 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/magit/contrib")
 (load "~/.emacs.d/lisp/matlab.el")
 (load "~/.emacs.d/lisp/csharp-mode.el")
+
+;; (package-install-file "~/.emacs.d/lisp/less-css-mode-0.6.el")
 
 (require 'scratch)

@@ -48,7 +48,7 @@
   (color-theme-install
    (append
     (list 'color-theme-john-super-theme
-          `((background-color . ,john-bg)
+          `((background-color . ,john-black)
             (background-mode . dark)
             (border-color . ,john-black)
             (cursor-color . ,john-brightgreen)
