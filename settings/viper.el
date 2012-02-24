@@ -9,6 +9,8 @@
       )
 
 (defun viper-cua-region-fix()
+  (define-key viper-vi-global-user-map "q" 'kmacro-start-macro)
+  (define-key viper-vi-global-user-map "Q" 'kmacro-end-or-call-macro)
   (define-key viper-vi-global-user-map [backspace] 'backward-delete-char-untabify)
   (define-key viper-vi-global-user-map "\C-d" 'delete-char)
   (define-key viper-insert-global-user-map [backspace] 'backward-delete-char-untabify)
