@@ -2,9 +2,10 @@
 ;; javascript
 ;;========================================================================
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\." . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . javascript-mode))
+(add-to-list 'auto-mode-alist '("\\.coffee\\." . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\.coffee$" . coffee-mode))
 (autoload 'javascript-mode "javascript" nil t)
 (setq js-indent-level 2)
 

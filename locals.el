@@ -44,6 +44,6 @@ safe-local-variable-values."
                  '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/gluestick-alpha && VERBOSE=true bundle exec rspec")
                                  (tags-file-name . "~/C2/gluestick-alpha/TAGS")))))
 
-(dir-locals-safe "~/C2/groupsage/impactful"
-                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/groupsage/impactful && bundle exec rspec")
+(dir-locals-safe "~/C2/groupsage/statwing"
+                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/groupsage/statwing && bundle exec rspec")
                                  ))))

@@ -16,6 +16,10 @@ With a prefix-arg, the merge will be squashed.
   (interactive "P")
   (magit-display-log arg "--all"))
 
+(defun magit-prune-origin (&optional arg)
+  (interactive)
+  (magit-run-git-async "remote" "prune" "origin"))
+
 (magit-define-command push ()
   (interactive)
   (let* ((branch (or (magit-get-current-branch)
@@ -79,6 +83,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "q") 'magit-quit-window)
         ;; my additions
         (define-key map (kbd "V") 'magit-show-branches)
+        (define-key map (kbd "J") 'magit-prune-origin)
         ;; my changes
         (define-key map (kbd "!") 'magit-shell-command)
         (define-key map (kbd "t") 'magit-tag)
@@ -88,7 +93,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "b") 'magit-checkout)
         (define-key map (kbd "B") 'magit-create-branch)
         (define-key map (kbd "F") 'magit-pull)
-        (define-key map (kbd "l") 'magit-log)
+        (define-key map (kbd "l") 'magit-display-log)
         (define-key map (kbd "L") 'magit-log-all)
         map))
 
@@ -137,7 +142,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "B") 'magit-create-branch)
         (define-key map (kbd "m") 'magit-merge-no-ff)
         (define-key map (kbd "M") 'magit-merge)
-        (define-key map (kbd "l") 'magit-log)
+        (define-key map (kbd "l") 'magit-display-log)
         (define-key map (kbd "t") 'magit-tag)
         map))
 
@@ -221,3 +226,5 @@ With a prefix-arg, the merge will be squashed.
   :init-value ()
   :lighter ()
   :keymap magit-wazzup-mode-map)
+
+(defalias 'magit-log 'magit-display-log)

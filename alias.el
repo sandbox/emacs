@@ -57,6 +57,7 @@
 
 (define-key global-map "\C-c\C-f" 'grep-find)
 (define-key global-map "\C-cf" 'grep-find)
+;; (define-key global-map "\C-xf" 'find-file-in-project)
 (define-key global-map "\M-%" 'query-replace-regexp)
 (define-key global-map "\C-s" 'isearch-forward-regexp)
 (define-key global-map "\C-r" 'isearch-backward-regexp)

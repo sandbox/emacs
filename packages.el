@@ -12,9 +12,9 @@
 ;;   darcs
 ;;   bzr
 ;;   git
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("ELPA" . "http://tromey.com/elpa/") 
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
 
 (load "~/.emacs.d/el-get/el-get/el-get.elc")
 
@@ -72,7 +72,7 @@
         full-ack
         
         ;; elpa
-
+        ;; (:name find-file-in-project :type elpa)
 	(:name dired-isearch :type elpa)
         (:name htmlize :type elpa)
         (:name kill-ring-search :type elpa)
@@ -101,3 +101,6 @@
 ;; (package-install-file "~/.emacs.d/lisp/less-css-mode-0.6.el")
 
 (require 'scratch)
+
+(require 'package)
+(package-initialize)

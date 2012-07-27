@@ -15,4 +15,6 @@
 (defconst user-mail-address "johnle@cs.stanford.edu")
 
 (set-register ?e '(file . "~/.emacs.d/init.el"))
+(set-register ?s '(file . "~/.emacs.d/settings"))
+(set-register ?a '(file . "~/.emacs.d/alias.el"))
 (put 'scroll-left 'disabled nil)
