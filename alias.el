@@ -84,6 +84,8 @@
 (define-key global-map "\C-c;js" 'javascript-mode)
 (define-key global-map "\C-c;jh" 'sgml-mode)
 
+(define-key global-map "\C-c;jj" 'clojure-jack-in)
+
 (define-key global-map "\C-c;f" 'follow-mode)
 (define-key global-map [backtab] 'table-backward-cell)
 
