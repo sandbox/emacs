@@ -20,6 +20,10 @@ With a prefix-arg, the merge will be squashed.
   (interactive)
   (magit-run-git-async "remote" "prune" "origin"))
 
+(defun magit-clean-local-branches (&optional arg)
+  (interactive)
+  (shell-command "git branch | grep -v develop | grep -v master | xargs git branch -d"))
+
 (defun magit-merge-develop (&optional arg)
   (interactive)
   (magit-run-git "merge" "origin/develop"))
@@ -90,6 +94,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "J") 'magit-prune-origin)
         (define-key map (kbd "Y") 'magit-key-mode-popup-pushing)
         (define-key map (kbd "H") 'magit-merge-develop)
+        (define-key map (kbd "N") 'magit-clean-local-branches)
         ;; my changes
         (define-key map (kbd "!") 'magit-shell-command)
         (define-key map (kbd "t") 'magit-tag)
