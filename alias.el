@@ -20,7 +20,7 @@
 (define-key global-map "\C-ch" 'hippie-expand)
 (define-key global-map "\M-/" 'hippie-expand)
 
-(define-key global-map "\C-x\C-b" 'ibuffer)
+(define-key global-map "\C-x\C-b" 'anything-mini)
 (define-key global-map "\C-xnb" 'rename-buffer)
 
 (define-key global-map [(right)] 'windmove-right)
@@ -57,7 +57,7 @@
 
 (define-key global-map "\C-c\C-f" 'grep-find)
 (define-key global-map "\C-cf" 'grep-find)
-;; (define-key global-map "\C-xf" 'find-file-in-project)
+(define-key global-map "\C-xf" 'anything)
 (define-key global-map "\M-%" 'query-replace-regexp)
 (define-key global-map "\C-s" 'isearch-forward-regexp)
 (define-key global-map "\C-r" 'isearch-backward-regexp)

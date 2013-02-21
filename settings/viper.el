@@ -8,6 +8,10 @@
       viper-vi-state-mode-list (quote (fundamental-mode help-mode Buffer-menu-mode makefile-mode awk-mode m4-mode xrdb-mode winmgr-mode autoconf-mode cvs-edit-mode html-mode html-helper-mode emacs-lisp-mode lisp-mode lisp-interaction-mode jde-mode java-mode cc-mode c-mode c++-mode objc-mode fortran-mode f90-mode basic-mode bat-mode asm-mode prolog-mode flora-mode text-mode indented-text-mode tex-mode latex-mode bibtex-mode ps-mode diff-mode idl-mode perl-mode cperl-mode javascript-mode tcl-mode python-mode sh-mode ksh-mode csh-mode gnus-article-mode mh-show-mode ruby-mode))
       )
 
+(remove-hook 'minibuffer-setup-hook 'viper-minibuffer-setup-sentinel)
+(defadvice viper-set-minibuffer-overlay (around vimpulse activate) nil)  
+;; (define-key minibuffer-local-map (kbd "ESC") 'abort-recursive-edit)
+
 (defun viper-cua-region-fix()
   (define-key viper-vi-global-user-map "q" 'kmacro-start-macro)
   (define-key viper-vi-global-user-map "Q" 'kmacro-end-or-call-macro)

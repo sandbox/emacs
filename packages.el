@@ -24,7 +24,7 @@
 (setq el-get-sources
       '(
         package
-        cedet
+        ;; cedet
 
         caml-mode
         clojure-mode
@@ -38,7 +38,7 @@
 
         markdown-mode
         haml-mode
-	sass-mode
+        sass-mode
         scss-mode
 
         haskell-mode
@@ -53,12 +53,12 @@
         processing-mode
 
         python
-	;; python-mode
+        ;; python-mode
         ;; pymacs
-	;; ipython
+        ;; ipython
         ;; django-mode
 
-	el-expectations
+        el-expectations
         rspec-mode
 
         scala-mode
@@ -73,7 +73,10 @@
         
         ;; elpa
         ;; (:name find-file-in-project :type elpa)
-	(:name dired-isearch :type elpa)
+        (:name         anything :type elpa)
+        (:name anything-config :type elpa)
+        (:name anything-match-plugin :type elpa)
+        (:name dired-isearch :type elpa)
         (:name htmlize :type elpa)
         (:name kill-ring-search :type elpa)
         (:name slime :type elpa)
