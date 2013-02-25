@@ -1,3 +1,5 @@
+(require 'anything-config)
+
 (defvar anything-c-source-git-project-files-cache nil "(path signature cached-buffer)")
 (defvar anything-c-source-git-project-files
   '((name . "Files from Current GIT Project")
