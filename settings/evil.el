@@ -1,105 +1,130 @@
-;; (evil-mode nil)
+(evil-mode t)
+(require 'evil-leader)
 
-;; (setq evil-ex-search-vim-style-regexp t
-;;       evil-leader/in-all-states t
-;;       evil-leader/leader " "
-;;       evil-mode-line-format nil
-;;       evil-move-cursor-back t
-;;       evil-search-module 'evil-search)
+(setq evil-ex-search-vim-style-regexp t
+      evil-leader/in-all-states t
+      evil-leader/leader " "
+      evil-mode-line-format nil
+      evil-move-cursor-back t
+      evil-search-module 'evil-search)
 
-;; (setq-default evil-shift-width 2)
+(setq-default evil-shift-width 2)
 
-;; (define-key evil-motion-state-map evil-leader/leader evil-leader/map)
+(define-key evil-motion-state-map evil-leader/leader evil-leader/map)
 
-;; (loop for (mode . state) in '((inferior-emacs-lisp-mode      . emacs)
-;;                               (comint-mode                   . emacs)
-;;                               (shell-mode                    . emacs)
-;;                               (magit-show-branches-mode      . emacs)
-;;                               (helm-mode                     . emacs)
-;;                               (erc-mode                      . emacs)
-;;                               (magit-branch-manager-mode     . emacs)
-;;                               (magit-log-edit-mode           . emacs)
-;;                               (sql-interactive-mode          . emacs))
-;;       do (evil-set-initial-state mode state))
+(loop for (mode . state) in
+      '(
+        (Info-mode                 . emacs)
+        (ack-mode                  . emacs)
+        (comint-mode               . emacs)
+        (compilation-mode          . emacs)
+        (completion-list-mode      . emacs)
+        (custom-mode               . emacs)
+        (erc-mode                  . emacs)
+        (eshell-mode               . emacs)
+        (inferior-ess-mode         . emacs)
+        (magit-key-mode            . emacs)
+        (dired-mode                . emacs)
+        (Custom-mode               . emacs)
+        (efs-mode                  . emacs)
+        (tar-mode                  . emacs)
+        (magit-branch-manager-mode . emacs)
+        (magit-log-edit-mode       . emacs)
+        (grep-mode                 . emacs)
+        (occur-mode                . emacs)
+        (shell-mode                . emacs)
+        (sql-interactive-mode      . emacs)
+        (sql-mode                  . emacs)
+        (view-mode                 . emacs)
+        (inferior-emacs-lisp-mode  . emacs)
+        )
+      do (evil-set-initial-state mode state))
 
-;; ;; key bindings
-;; (fill-keymap evil-normal-state-map
-;;              "SPC"   'ace-jump-char-mode
-;;              "C-c +" 'evil-numbers/inc-at-pt
-;;              "C-c -" 'evil-numbers/dec-at-pt)
+;; key bindings
+(fill-keymap evil-normal-state-map
+             ;; "SPC"   'ace-jump-char-mode
+             "C-r"   'isearch-backward-regexp
+             "C-y"   'evil-paste-before
+             "P"     'evil-paste-after
+             "p"     'evil-paste-before
+             "C-c +" 'evil-numbers/inc-at-pt
+             "C-c -" 'evil-numbers/dec-at-pt)
 
-;; (fill-keymap evil-window-map
-;;              "u"   'winner-undo
-;;              "C-r" 'winner-redo
-;;              "M-h" 'buf-move-left
-;;              "M-j" 'buf-move-down
-;;              "M-k" 'buf-move-up
-;;              "M-l" 'buf-move-right)
+(fill-keymap evil-motion-state-map
+             (kbd "C-d") 'delete-char
+             (kbd "C-e") 'evil-end-of-line)
 
-;; ;; evil leader
-;; (evil-leader/set-key
-;;   "a" 'ack
-;;   "b" 'ido-switch-buffer
-;;   "B" 'ido-switch-buffer-other-window
-;;   "d" 'dired-jump
-;;   "D" 'toggle-current-window-dedication
-;;   "e" 'er/expand-region
-;;   "E" 'eshell
-;;   "f" 'ido-find-file
-;;   "F" 'ido-find-file-other-window
-;;   "g" 'magit-status
-;;   "k" 'kill-this-buffer
-;;   "K" 'kill-buffer-and-window
-;;   "m" 'bookmark-ido-find-file
-;;   "o" 'browse-url-of-file
-;;   "r" 'recentf-ido-find-file
-;;   "R" 'find-file-in-repository
-;;   "s" 'rspec-verify-single
-;;   "t" 'ido-goto-symbol
-;;   "v" 'rspec-verify
-;;   "w" 'evil-write)
+(defun evil-keyboard-quit ()
+  (interactive)
+  (if (eq evil-state 'insert)
+      (progn
+        (evil-normal-state)
+        (keyboard-quit))
+    (keyboard-quit)))
 
-;; ;; compilation mode
-;; (add-hook 'compilation-mode-hook '(lambda ()
-;;                                     (local-unset-key "h")
-;;                                     (local-unset-key "0")))
+(defun evil-normal-state-and-save ()
+  (interactive)
+  (if (eq evil-state 'insert)
+      (progn
+        (evil-normal-state)
+        (save-buffer))
+    (save-buffer)))
 
-;; ;; org mode
-;; (evil-declare-key 'normal org-mode-map
-;;                   "za"        'org-cycle
-;;                   "zA"        'org-shifttab
-;;                   "zc"        'hide-subtree
-;;                   "zC"        'org-hide-block-all
-;;                   "zm"        'hide-body
-;;                   "zo"        'show-subtree
-;;                   "zO"        'show-all
-;;                   "zr"        'show-all
-;;                   (kbd "RET") 'org-open-at-point
-;;                   (kbd "M-j") 'org-shiftleft
-;;                   (kbd "M-k") 'org-shiftright
-;;                   (kbd "M-H") 'org-metaleft
-;;                   (kbd "M-J") 'org-metadown
-;;                   (kbd "M-K") 'org-metaup
-;;                   (kbd "M-L") 'org-metaright)
+(fill-keymap evil-insert-state-map
+             (kbd "C-g") 'evil-keyboard-quit
+             (kbd "C-k") 'kill-line
+             (kbd "C-y") 'yank
+             (kbd "C-e") 'move-end-of-line
+             (kbd "C-x C-s") 'evil-normal-state-and-save)
 
-;; (evil-declare-key 'insert org-mode-map
-;;                   (kbd "M-j") 'org-shiftleft
-;;                   (kbd "M-k") 'org-shiftright
-;;                   (kbd "M-H") 'org-metaleft
-;;                   (kbd "M-J") 'org-metadown
-;;                   (kbd "M-K") 'org-metaup
-;;                   (kbd "M-L") 'org-metaright)
+;; evil leader
+(evil-leader/set-key
+  "a" 'grep-find
+  "b" 'ido-switch-buffer
+  "B" 'ido-switch-buffer-other-window
+  "d" 'dired-jump
+  "e" 'er/expand-region
+  "E" 'shell
+  "f" 'anything
+  "F" 'ido-find-file-other-window
+  "g" 'magit-status
+  "k" 'kill-this-buffer
+  "K" 'kill-buffer-and-window
+  "o" 'browse-url-of-file
+  "s" 'rspec-verify-single
+  "t" 'ido-goto-symbol
+  "v" 'rspec-verify
+  "w" 'evil-write)
 
-;; ;; eshell mode
-;; (defun eshell-evil-keys ()
-;;      (define-key eshell-mode-map (kbd "C-w h") 'windmove-left)
-;;      (define-key eshell-mode-map (kbd "C-w C-h") 'windmove-left)
-;;      (define-key eshell-mode-map (kbd "C-w l") 'windmove-right)
-;;      (define-key eshell-mode-map (kbd "C-w C-l") 'windmove-right)
-;;      (define-key eshell-mode-map (kbd "C-w j") 'windmove-down)
-;;      (define-key eshell-mode-map (kbd "C-w C-j") 'windmove-down)
-;;      (define-key eshell-mode-map (kbd "C-w C-k") 'windmove-up)
-;;      (define-key eshell-mode-map (kbd "C-w k") 'windmove-up)
-;;      (define-key eshell-mode-map (kbd "C-d") 'bury-buffer))
+(defun evil-undefine ()
+  (interactive)
+  (let (evil-mode-map-alist)
+    (call-interactively (key-binding (this-command-keys)))))
 
-;; (add-hook 'eshell-mode-hook 'eshell-evil-keys)
+(define-key evil-motion-state-map [left] 'evil-undefine)
+(define-key evil-motion-state-map [right] 'evil-undefine)
+(define-key evil-motion-state-map [up] 'evil-undefine)
+(define-key evil-motion-state-map [down] 'evil-undefine)
+
+;; compilation mode
+(add-hook 'compilation-mode-hook '(lambda ()
+                                    (local-unset-key "h")
+                                    (local-unset-key "0")))
+
+;; org mode
+(evil-declare-key 'normal org-mode-map
+  "za"        'org-cycle
+  "zA"        'org-shifttab
+  "zc"        'hide-subtree
+  "zC"        'org-hide-block-all
+  "zm"        'hide-body
+  "zo"        'show-subtree
+  "zO"        'show-all
+  "zr"        'show-all
+  (kbd "RET") 'org-open-at-point
+  (kbd "M-j") 'org-shiftleft
+  (kbd "M-k") 'org-shiftright
+  (kbd "M-H") 'org-metaleft
+  (kbd "M-J") 'org-metadown
+  (kbd "M-K") 'org-metaup
+  (kbd "M-L") 'org-metaright)

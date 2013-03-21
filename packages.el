@@ -13,6 +13,7 @@
 ;; Figure these out later
 (defvar john-packages
       '(
+        ace-jump-mode
         anything
         anything-config
         anything-match-plugin
@@ -26,6 +27,7 @@
         diminish
         dired+
         dired-isearch
+        undo-tree
         evil
         evil-leader
         evil-numbers

@@ -37,8 +37,9 @@
 
 ;;(define-key global-map "\C-j" 'newline-and-indent) ;; this is what it was
 ;;(define-key global-map "\C-l" 'recenter) ;; this is what it was
-(define-key global-map "\M-p" 'backward-paragraph)
-(define-key global-map "\M-n" 'forward-paragraph)
+;; (define-key global-map "\M-p" 'backward-paragraph)
+;; (define-key global-map "\M-n" 'forward-paragraph)
+
 
 ;; I really dislike this binding
 ;; (define-key global-map "\C-x\C-x" 'exchange-point-and-mark)
