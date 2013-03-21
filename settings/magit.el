@@ -31,17 +31,17 @@ With a prefix-arg, the merge will be squashed.
 (magit-define-command push ()
   (interactive)
   (let* ((branch (or (magit-get-current-branch)
-		     (error "Don't push a detached head.  That's gross")))
-	 (branch-remote (magit-get-remote branch))
-	 (push-remote (if (or current-prefix-arg
-			      (not branch-remote))
-			  (magit-read-remote (format "Push %s to: " branch)
-					     branch-remote)
-			branch-remote))
-	 (ref-branch (magit-get "branch" branch "merge")))
+                     (error "Don't push a detached head.  That's gross")))
+         (branch-remote (magit-get-remote branch))
+         (push-remote (if (or current-prefix-arg
+                              (not branch-remote))
+                          (magit-read-remote (format "Push %s to: " branch)
+                                             branch-remote)
+                        branch-remote))
+         (ref-branch (magit-get "branch" branch "merge")))
     (if (and (not branch-remote)
-	     (not current-prefix-arg))
-	(magit-set push-remote "branch" branch "remote"))
+             (not current-prefix-arg))
+        (magit-set push-remote "branch" branch "remote"))
     (apply 'magit-run-git-async "push" "-v" push-remote
            (if ref-branch
                (format "%s:%s" branch ref-branch)
@@ -90,7 +90,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "w") 'magit-wazzup)
         (define-key map (kbd "q") 'magit-quit-window)
         ;; my additions
-        (define-key map (kbd "V") 'magit-show-branches)
+        (define-key map (kbd "V") 'magit-branch-manager)
         (define-key map (kbd "J") 'magit-prune-origin)
         (define-key map (kbd "Y") 'magit-key-mode-popup-pushing)
         (define-key map (kbd "H") 'magit-merge-develop)
@@ -174,68 +174,3 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "m") 'magit-merge-no-ff)
         (define-key map (kbd "M") 'magit-merge)
         map))
-
-(define-minor-mode magit-commit-mode
-  "Minor mode to view a git commit.
-
-\\{magit-commit-mode-map}"
-  :group magit
-  :init-value ()
-  :lighter ()
-  :keymap magit-commit-mode-map)
-
-(define-minor-mode magit-status-mode
-  "Minor mode for looking at git status.
-
-\\{magit-status-mode-map}"
-  :group magit
-  :init-value ()
-  :lighter ()
-  :keymap magit-status-mode-map)
-
-(define-minor-mode magit-stash-mode
-  "Minor mode for looking at a git stash.
-
-\\{magit-stash-mode-map}"
-  :group magit
-  :init-value ()
-  :lighter ()
-  :keymap magit-stash-mode-map)
-
-(define-minor-mode magit-log-mode
-  "Minor mode for looking at git log.
-
-\\{magit-log-mode-map}"
-  :group magit
-  :init-value ()
-  :lighter ()
-  :keymap magit-log-mode-map)
-
-(define-minor-mode magit-reflog-mode
-  "Minor mode for looking at git reflog.
-
-\\{magit-reflog-mode-map}"
-  :group magit
-  :init-value ()
-  :lighter ()
-  :keymap magit-reflog-mode-map)
-
-(define-minor-mode magit-diff-mode
-  "Minor mode for looking at a git diff.
-
-\\{magit-diff-mode-map}"
-  :group magit
-  :init-value ()
-  :lighter ()
-  :keymap magit-diff-mode-map)
-
-(define-minor-mode magit-wazzup-mode
-  "Minor mode for looking at commits that could be merged from other branches.
-
-\\{magit-wazzup-mode-map}"
-  :group magit
-  :init-value ()
-  :lighter ()
-  :keymap magit-wazzup-mode-map)
-
-(defalias 'magit-log 'magit-display-log)
