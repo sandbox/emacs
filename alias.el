@@ -16,9 +16,7 @@
 (define-key global-map (kbd "C-'") 'bash-term)
 (define-key global-map (kbd "C-x C-'") 'term)
 
-(define-key global-map [(control tab)] 'hippie-expand)
-(define-key global-map "\C-ch" 'hippie-expand)
-(define-key global-map "\M-/" 'hippie-expand)
+(define-key global-map "\M-/" 'smart-tab)
 
 (define-key global-map "\C-x\C-b" 'anything-mini)
 (define-key global-map "\C-xnb" 'rename-buffer)
@@ -93,9 +91,10 @@
 
 (define-key global-map "\C-xr\C-@" 'cua-set-rectangle-mark)
 
-(define-key global-map "\C-c;v" 'toggle-viper-mode)
-(define-key global-map "\C-x\C-s" 'viper-save)
-(define-key global-map "\C-g" 'viper-keyboard-quit)
-
 (define-key global-map "\C-cw" 'whitespace-cleanup)
-(define-key global-map "\C-xs" 'viper-save)
+
+;;(define-key global-map "\C-xs" 'viper-save)
+;; (define-key global-map "\C-c;v" 'toggle-viper-mode)
+;; (define-key global-map "\C-x\C-s" 'viper-save)
+;;(define-key global-map "\C-g" 'viper-keyboard-quit)
+

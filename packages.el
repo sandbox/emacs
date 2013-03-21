@@ -19,6 +19,7 @@
         auctex
         caml
         clojure-mode
+        clojure-test-mode
         coffee-mode
         csv-mode
         dash
@@ -39,7 +40,6 @@
         json
         lua-mode
         magit
-        magit-simple-keys
         markdown-mode
         melpa
         mode-compile
