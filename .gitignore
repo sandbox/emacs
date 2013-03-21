@@ -11,6 +11,7 @@ tramp
 /el-get/el-get/recipes/*
 plugins/nxhtml/*
 url/*
+elpa
 elpa/builtin-packages
 elpa/archive-contents
 elpa/**/*.el

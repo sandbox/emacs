@@ -1,4 +1,5 @@
 (require 'anything-config)
+(require 'anything-match-plugin)
 
 (defvar anything-c-source-git-project-files-cache nil "(path signature cached-buffer)")
 (defvar anything-c-source-git-project-files

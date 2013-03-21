@@ -1,109 +1,81 @@
-;; ;; So the idea is that you copy/paste this code into your *scratch* buffer,
-;; ;; hit C-j, and you have a working el-get.
-;; (if (require 'el-get nil t)
-;;     (message "el-get is already installed, try M-x el-get-update")
-;;   (url-retrieve
-;;    "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
-;;    (lambda (s)
-;;      (end-of-buffer)
-;;      (eval-print-last-sexp))))
-;;
-;; Dependencies
-;;   darcs
-;;   bzr
-;;   git
-(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("ELPA" . "http://tromey.com/elpa/") 
-                         ("gnu" . "http://elpa.gnu.org/packages/")))
+(setq evil-want-C-u-scroll t)
 
-(load "~/.emacs.d/el-get/el-get/el-get.elc")
+(require 'package)
 
-(require 'el-get)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
+(package-initialize)
+
+(setq url-http-attempt-keepalives nil)
 
 ;; Figure these out later
-(setq el-get-sources
+(defvar john-packages
       '(
-        package
-        ;; cedet
-
-        caml-mode
+        anything
+        anything-config
+        anything-match-plugin
+        auctex
+        caml
         clojure-mode
         coffee-mode
-        color-theme
         csv-mode
+        dash
         diminish
         dired+
-        el-get
-        gist
-
-        markdown-mode
+        dired-isearch
+        evil
+        evil-leader
+        evil-numbers
+        evil-paredit
+        exec-path-from-shell
+        expand-region
+        flycheck
+        gitconfig-mode
+        gitignore-mode
         haml-mode
-        sass-mode
-        scss-mode
-
         haskell-mode
-        hs-lint
         json
         lua-mode
         magit
-
-        ;; matlab-mode
+        magit-simple-keys
+        markdown-mode
+        melpa
         mode-compile
+        paredit
         php-mode
-        processing-mode
-
         python
-        ;; python-mode
-        ;; pymacs
-        ;; ipython
-        ;; django-mode
-
-        el-expectations
         rspec-mode
-
+        ruby-mode
+        sass-mode
         scala-mode
-        ensime
         scratch
-        vimpulse
-        wrap-region
+        scss-mode
+        slime
+        slime-repl
+        smart-tab
         yaml-mode
         yasnippet
+        zenburn-theme))
 
-        full-ack
-        
-        ;; elpa
-        ;; (:name find-file-in-project :type elpa)
-        (:name         anything :type elpa)
-        (:name anything-config :type elpa)
-        (:name anything-match-plugin :type elpa)
-        (:name dired-isearch :type elpa)
-        (:name htmlize :type elpa)
-        (:name kill-ring-search :type elpa)
-        (:name slime :type elpa)
-        (:name slime-repl :type elpa)
-        (:name ruby-mode :type elpa)
-        (:name paredit :type elpa)
-        ;; (:name less-css-mode :type elpa)
-        ))
+(mapc
+ (lambda (package)
+   (or (package-installed-p package)
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
+           (package-install package))))
+ john-packages)
 
-(setq my-packages
-      (mapcar 'el-get-source-name el-get-sources))
-
-(el-get 'sync my-packages)
-;; (mapc 'el-get-install el-get-sources)
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 ;;
 ;; Load modes that emacs doesn't have and el-get doesn't properly
 ;; install
 ;;
 ;; (load "~/.emacs.d/lisp/magit.el")
-(add-to-list 'load-path "~/.emacs.d/el-get/magit/contrib")
-(load "~/.emacs.d/lisp/matlab.el")
-(load "~/.emacs.d/lisp/csharp-mode.el")
-
+;; (add-to-list 'load-path "~/.emacs.d/el-get/magit/contrib")
+;; (load "~/.emacs.d/lisp/matlab.el")
+;; (load "~/.emacs.d/lisp/csharp-mode.el")
 ;; (package-install-file "~/.emacs.d/lisp/less-css-mode-0.6.el")
 
 (require 'scratch)
-
-(require 'package)
-(package-initialize)
