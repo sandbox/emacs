@@ -221,7 +221,7 @@
    `(font-lock-variable-name-face        ((t (:foreground ,john-greengreen))))
    `(font-lock-warning-face              ((,class (:foreground ,ujelly-red-1))))
    ;; `(fringe                              ((t ())))
-   `(header-line                         ((,class (:foreground ,ujelly-fg))))
+   `(header-line                         ((,class (:foreground ,john-orange :background ,john-black))))
    ;; `(help-argument-name                  ((t ())))
    ;; `(highlight                           ((t ())))
    ;; `(highlight-changes                   ((t ())))

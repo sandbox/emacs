@@ -18,6 +18,7 @@
         (ack-mode                  . emacs)
         (comint-mode               . emacs)
         (compilation-mode          . emacs)
+        (rspec-compilation-mode    . emacs)
         (completion-list-mode      . emacs)
         (custom-mode               . emacs)
         (erc-mode                  . emacs)
