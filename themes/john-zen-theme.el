@@ -30,7 +30,7 @@
       (ujelly-yellow-0 "#fad07a")
       (ujelly-yellow-1 "#ffff00")
       (john-fg          "#d2dec4")
-      (john-bg          "#191717")
+      (john-bg          "#100e0e")
       (john-white       "#ffffff")
       (john-black       "#000000")
       (john-brightblack "#7f7f7f")
