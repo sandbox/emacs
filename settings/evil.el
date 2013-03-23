@@ -1,7 +1,9 @@
-(evil-mode t)
+(evil-mode 1)
+(global-undo-tree-mode -1)
 (require 'evil-leader)
 
 (setq evil-ex-search-vim-style-regexp t
+      evil-want-fine-undo t
       evil-leader/in-all-states t
       evil-leader/leader " "
       evil-mode-line-format nil
