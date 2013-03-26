@@ -59,6 +59,9 @@
 (setq-default truncate-lines t
               indent-tabs-mode nil)
 
-(delete-selection-mode t)
-(global-font-lock-mode t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(show-paren-mode 1)
+(delete-selection-mode 1)
+(global-font-lock-mode 1)
 (desktop-save-mode 1)

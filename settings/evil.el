@@ -48,6 +48,8 @@
              ;; "SPC"   'ace-jump-char-mode
              "C-r"   'isearch-backward-regexp
              "C-y"   'evil-paste-before
+             "C-n"   'next-line
+             "C-p"   'previous-line
              "P"     'evil-paste-after
              "p"     'evil-paste-before
              "C-c +" 'evil-numbers/inc-at-pt
