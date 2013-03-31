@@ -46,12 +46,13 @@
 ;; key bindings
 (fill-keymap evil-normal-state-map
              ;; "SPC"   'ace-jump-char-mode
+             "u"     'undo
              "C-r"   'isearch-backward-regexp
              "C-y"   'evil-paste-before
              "C-n"   'next-line
              "C-p"   'previous-line
              "P"     'evil-paste-after
-             "p"     'evil-paste-before
+             "p"     'yank
              "C-c +" 'evil-numbers/inc-at-pt
              "C-c -" 'evil-numbers/dec-at-pt)
 
