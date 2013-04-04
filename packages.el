@@ -21,6 +21,7 @@
         caml
         clojure-mode
         clojure-test-mode
+        nrepl
         coffee-mode
         csv-mode
         dash
@@ -64,7 +65,7 @@
 (mapc
  (lambda (package)
    (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  john-packages)
 

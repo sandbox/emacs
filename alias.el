@@ -45,7 +45,7 @@
 ;; (define-key global-map "\C-x\C-x" 'exchange-point-and-mark)
 ;; (define-key global-map "\C-x\C-p" 'mark-page)
 (define-key global-map "\C-x\C-p" nil)
-(define-key global-map "\C-m" 'newline-and-indent) 
+(define-key global-map "\C-m" 'newline-and-indent)
 
 (define-key global-map "\C-xwl" 'highlight-lines-matching-regexp)
 (define-key global-map "\C-xwh" 'highlight-regexp)
@@ -83,7 +83,7 @@
 (define-key global-map "\C-c;js" 'javascript-mode)
 (define-key global-map "\C-c;jh" 'sgml-mode)
 
-(define-key global-map "\C-c;jj" 'clojure-jack-in)
+(define-key global-map "\C-c;jj" 'nrepl-jack-in)
 
 (define-key global-map "\C-c;f" 'follow-mode)
 (define-key global-map [backtab] 'table-backward-cell)
@@ -98,4 +98,3 @@
 ;; (define-key global-map "\C-c;v" 'toggle-viper-mode)
 ;; (define-key global-map "\C-x\C-s" 'viper-save)
 ;;(define-key global-map "\C-g" 'viper-keyboard-quit)
-
