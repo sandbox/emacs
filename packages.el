@@ -49,6 +49,7 @@
         paredit
         php-mode
         python
+        nose
         rspec-mode
         ruby-mode
         sass-mode

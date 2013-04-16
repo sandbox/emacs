@@ -16,6 +16,7 @@
 
 (loop for (mode . state) in
       '(
+        (nrepl-mode                . normal)
         (Info-mode                 . emacs)
         (ack-mode                  . emacs)
         (comint-mode               . emacs)
@@ -46,6 +47,7 @@
 ;; key bindings
 (fill-keymap evil-normal-state-map
              ;; "SPC"   'ace-jump-char-mode
+             "C-u"   'universal-argument
              "u"     'undo
              "C-r"   'isearch-backward-regexp
              "C-y"   'evil-paste-before
@@ -57,6 +59,7 @@
              "C-c -" 'evil-numbers/dec-at-pt)
 
 (fill-keymap evil-motion-state-map
+             (kbd "C-u") 'universal-argument
              (kbd "C-d") 'delete-char
              (kbd "C-e") 'evil-end-of-line)
 

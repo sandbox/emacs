@@ -27,6 +27,9 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; (setq split-height-threshold 0)
+;; (setq split-width-threshold nil)
+
 (setq backup-directory-alist (list (cons "." backup-dir))
       blink-cursor-mode nil
       column-number-mode t
