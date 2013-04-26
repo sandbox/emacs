@@ -1,0 +1,4 @@
+regexp for to align text after a colon
+
+\(\s-*:\)\(\s-*\)
+align group 2
