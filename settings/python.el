@@ -16,3 +16,6 @@
             (local-set-key "\C-c,a" 'nosetests-all)
             (local-set-key "\C-c,m" 'nosetests-module)
             (local-set-key "\C-c,s" 'nosetests-one)))
+
+(setq auto-mode-alist (cons '("\\.pyx$" . python-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pxd$" . python-mode) auto-mode-alist))

@@ -103,7 +103,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "f") 'magit-fetch-current)
         (define-key map (kbd "b") 'magit-checkout)
         (define-key map (kbd "B") 'magit-create-branch)
-        (define-key map (kbd "F") 'magit-pull)
+        (define-key map (kbd "F") 'magit-remote-update)
         (define-key map (kbd "l") 'magit-display-log)
         (define-key map (kbd "L") 'magit-log-all)
         map))
