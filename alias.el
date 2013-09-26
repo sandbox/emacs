@@ -88,6 +88,7 @@
 (define-key global-map "\C-c;f" 'follow-mode)
 (define-key global-map [backtab] 'table-backward-cell)
 
+(define-key global-map "\C-xm" 'magit-status)
 (define-key global-map "\C-cM" 'magit-status)
 
 (define-key global-map "\C-xr\C-@" 'cua-set-rectangle-mark)

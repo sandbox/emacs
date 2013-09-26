@@ -174,3 +174,10 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "m") 'magit-merge-no-ff)
         (define-key map (kbd "M") 'magit-merge)
         map))
+
+(defun my-open-magit-buffer (buf)
+  (if (get-buffer-window buf)
+      (pop-to-buffer buf)
+    (switch-to-buffer buf)))
+
+(setq magit-status-buffer-switch-function 'my-open-magit-buffer)
