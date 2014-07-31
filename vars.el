@@ -64,6 +64,8 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; (remove-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (show-paren-mode 1)
 (delete-selection-mode 1)
 (global-font-lock-mode 1)
