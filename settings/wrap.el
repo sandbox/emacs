@@ -1,2 +1,2 @@
-;; (require 'wrap-region)
-;; (wrap-region-global-mode -1)
+(require 'wrap-region)
+(wrap-region-global-mode -1)

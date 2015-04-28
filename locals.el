@@ -23,7 +23,7 @@ in the same format as `dir-locals-set-class-variables' expects."
      (dir-locals-set-directory-class ,dir name nil)))
 
 (defmacro dir-locals-safe (directory variables)
-  "Set local variables for a directory and add variables to 
+  "Set local variables for a directory and add variables to
 safe-local-variable-values."
   `(progn
      (dir-locals ,directory ,variables)
@@ -33,4 +33,8 @@ safe-local-variable-values."
 
 (dir-locals-safe "~/C2/statwing/cake-stats"
                  '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")
+                                 ))))
+
+(dir-locals-safe "~/C2/statwing/cake-stats-vm"
+                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats-vm && bundle exec rspec")
                                  ))))

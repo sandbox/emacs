@@ -33,6 +33,6 @@
 
 (setq anything-sources
       '(;; anything-c-source-buffers-list
-        anything-c-source-recentf
+        anything-c-source-git-project-files
         anything-c-source-files-in-current-dir+
-        anything-c-source-git-project-files))
+        anything-c-source-recentf))
