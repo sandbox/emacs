@@ -1,6 +1,3 @@
-(require 'slime)
-(eval-after-load 'slime '(setq slime-protocol-version 'ignore))
-(slime-setup '(slime-repl))
 (require 'clojure-mode)
 (require 'clojure-test-mode)
 (require 'nrepl)
@@ -36,8 +33,6 @@
      (defun clojure-indent-hook ()
        (define-clojure-indent (clone-for 1) (at 1)))
      (add-hook 'clojure-mode-hook 'clojure-indent-hook)))
-
-(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
 
 (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
 (add-hook 'nrepl-mode-hook 'paredit-mode)

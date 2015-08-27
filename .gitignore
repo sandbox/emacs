@@ -20,3 +20,4 @@ history
 /.emacs.desktop
 /.emacs.desktop.lock
 /lisp/haml-mode/
+.DS_Store

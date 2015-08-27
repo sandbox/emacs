@@ -2,9 +2,8 @@
 
 (require 'package)
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
 
 (package-initialize)
 
@@ -44,7 +43,7 @@
         lua-mode
         magit
         markdown-mode
-        melpa
+        ;; melpa
         mode-compile
         paredit
         php-mode
@@ -56,8 +55,8 @@
         scala-mode
         scratch
         scss-mode
-        slime
-        slime-repl
+        ;; slime
+        ;; slime-repl
         smart-tab
         yaml-mode
         yasnippet

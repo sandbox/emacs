@@ -1,3 +1,5 @@
+(require 'tramp)
+
 ;; http://atomized.org/2009/05/emacs-23-easier-directory-local-variables/
 (defmacro absolute-dirname (path)
   "Return the directory name portion of a path.

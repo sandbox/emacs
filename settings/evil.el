@@ -1,18 +1,17 @@
 (evil-mode 1)
 (global-undo-tree-mode -1)
+(global-evil-leader-mode)
 (require 'evil-leader)
 
 (setq evil-ex-search-vim-style-regexp t
       evil-want-fine-undo t
       evil-leader/in-all-states t
-      evil-leader/leader " "
       evil-mode-line-format nil
       evil-move-cursor-back t
       evil-search-module 'evil-search)
 
+(evil-leader/set-leader "<SPC>")
 (setq-default evil-shift-width 2)
-
-(define-key evil-motion-state-map evil-leader/leader evil-leader/map)
 
 (loop for (mode . state) in
       '(
@@ -80,6 +79,7 @@
     (save-buffer)))
 
 (fill-keymap evil-insert-state-map
+             (kbd "C-d") 'delete-char
              (kbd "C-g") 'evil-keyboard-quit
              (kbd "C-k") 'kill-line
              (kbd "C-y") 'yank
