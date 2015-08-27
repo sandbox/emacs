@@ -120,7 +120,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "t") 'magit-tag)
         (define-key map "r" 'magit-key-mode-popup-rewriting)
         (define-key map "R" 'magit-rebase-popup)
-        (define-key map (kbd "P") 'magit-push)
+        (define-key map (kbd "P") 'magit-push-current)
         (define-key map (kbd "f") 'magit-fetch-current)
         (define-key map (kbd "b") 'magit-checkout)
         (define-key map (kbd "B") 'magit-branch)
