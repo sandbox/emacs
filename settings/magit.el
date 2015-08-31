@@ -1,6 +1,7 @@
 (require 'magit)
 
-(setq magit-push-always-verify nil)
+(setq magit-push-always-verify nil
+      git-commit-summary-max-length 80)
 
 (defun magit-merge-no-ff (revision)
   "Merge REVISION into the current 'HEAD'; leave changes uncommitted.
