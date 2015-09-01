@@ -79,6 +79,7 @@
     (save-buffer)))
 
 (fill-keymap evil-insert-state-map
+             (kbd "C-a") 'move-beginning-of-line
              (kbd "C-d") 'delete-char
              (kbd "C-g") 'evil-keyboard-quit
              (kbd "C-k") 'kill-line
