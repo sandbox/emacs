@@ -2,6 +2,9 @@
 ;; Put autosave files (ie #foo#) in one place, *not*
 ;; scattered all over the file system!
 ;;==============================================================================
+
+(setq create-lockfiles nil)
+
 (defvar autosave-dir
   (concat "~/.emacs.d/emacs_autosaves/" (user-login-name) "/"))
 

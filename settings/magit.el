@@ -27,6 +27,14 @@ With a prefix-arg, the merge will be squashed.
   (interactive)
   (magit-run-git "merge" "origin/develop"))
 
+(defun magit-branch-checkout-new (branch start-point &optional args)
+  (interactive (magit-branch-read-args "Create and checkout branch"
+                                       (magit-stash-at-point)))
+  (if (string-match-p "^stash@{[0-9]+}$" start-point)
+      (magit-run-git "stash" "branch" branch start-point)
+    (magit-run-git "checkout" args "-b" branch start-point))
+  (magit-branch-unset-upstream branch))
+
 (setq magit-mode-map
       (let ((map (make-keymap)))
         (suppress-keymap map t)
@@ -56,8 +64,8 @@ With a prefix-arg, the merge will be squashed.
         (define-key map "$" 'magit-process)
         (define-key map "a" 'magit-cherry-apply)
         (define-key map "A" 'magit-cherry-pick-popup)
-        (define-key map "b" 'magit-branch-popup)
-        (define-key map "B" 'magit-bisect-popup)
+        ;; (define-key map "b" 'magit-branch-popup)
+        ;; (define-key map "B" 'magit-bisect-popup)
         (define-key map "c" 'magit-commit)
         ;; (define-key map "c" 'magit-commit-popup)
         (define-key map "d" 'magit-diff-dwim)
@@ -124,7 +132,7 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "P") 'magit-push-quickly)
         (define-key map (kbd "f") 'magit-fetch-current)
         (define-key map (kbd "b") 'magit-checkout)
-        (define-key map (kbd "B") 'magit-branch)
+        (define-key map (kbd "B") 'magit-branch-checkout-new)
         (define-key map (kbd "F") 'magit-remote-update)
         (define-key map (kbd "l") 'magit-log-current)
         (define-key map (kbd "L") 'magit-log-all)
@@ -135,6 +143,7 @@ With a prefix-arg, the merge will be squashed.
         (set-keymap-parent map magit-mode-map)
         ;; my changes
         (define-key map (kbd "b") 'magit-checkout)
+        (define-key map (kbd "B") 'magit-branch-checkout-new)
         ;; (define-key map (kbd "m") 'magit-merge-no-ff)
         (define-key map (kbd "M") 'magit-merge)
         (define-key map (kbd "z") 'magit-stash)

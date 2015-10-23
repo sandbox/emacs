@@ -86,6 +86,9 @@
 (define-key global-map "\C-c;jj" 'nrepl-jack-in)
 
 (define-key global-map "\C-c;f" 'follow-mode)
+
+(define-key global-map "\C-c;d" 'desktop-change-dir)
+
 (define-key global-map [backtab] 'table-backward-cell)
 
 (define-key global-map "\C-xm" 'magit-status)

@@ -1,7 +1,10 @@
+(require 'evil)
 (evil-mode 1)
 (global-undo-tree-mode -1)
 (global-evil-leader-mode)
-(require 'evil-leader)
+
+(require 'evil-surround)
+(global-evil-surround-mode nil)
 
 (setq evil-ex-search-vim-style-regexp t
       evil-want-fine-undo t
@@ -89,10 +92,12 @@
 
 ;; evil leader
 (evil-leader/set-key
+  "'" 'delete-pair
   "a" 'grep-find
   "b" 'ido-switch-buffer
   "B" 'ido-switch-buffer-other-window
   "d" 'dired-jump
+  "D" 'desktop-change-dir
   "e" 'er/expand-region
   "E" 'shell
   "f" 'anything

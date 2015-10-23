@@ -23,6 +23,7 @@
         nrepl
         coffee-mode
         csv-mode
+;;        elm-mode
         dash
         diminish
         dired+
@@ -30,6 +31,7 @@
         undo-tree
         evil
         evil-leader
+        evil-surround
         evil-numbers
         evil-paredit
         exec-path-from-shell

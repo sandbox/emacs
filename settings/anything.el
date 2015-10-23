@@ -37,3 +37,7 @@
         anything-c-source-buffers-list
         anything-c-source-files-in-current-dir+
         anything-c-source-recentf))
+
+(setq
+ anything-input-idle-delay nil ;; 0.3
+ anything-idle-delay nil)
