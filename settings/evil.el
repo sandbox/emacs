@@ -96,6 +96,7 @@
   "a" 'grep-find
   "b" 'ido-switch-buffer
   "B" 'ido-switch-buffer-other-window
+  "c" 'compile
   "d" 'dired-jump
   "D" 'desktop-change-dir
   "e" 'er/expand-region

@@ -1,6 +1,7 @@
 (message "loading mac specific settings")
 
 (setq shell-file-name "bash")
+
 (setenv "SHELL" shell-file-name)
 (setq exec-path (cons "/opt/local/sbin" exec-path))
 (setq exec-path (cons "/opt/local/bin" exec-path))

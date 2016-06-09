@@ -34,8 +34,8 @@ safe-local-variable-values."
          (add-to-list 'safe-local-variable-values variable)))))
 
 (dir-locals-safe "~/C2/statwing/cake-stats"
-                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")
-                                 ))))
+                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")))
+                   (rspec-dired-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")))))
 
 (dir-locals-safe "~/C2/statwing/cake-stats-vm"
                  '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats-vm && bundle exec rspec")

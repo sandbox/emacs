@@ -1,3 +1,4 @@
+(require 'midnight)
 (setq
  midnight-mode t
  clean-buffer-list-delay-general 1

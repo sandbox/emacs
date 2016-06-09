@@ -19,6 +19,10 @@ With a prefix-arg, the merge will be squashed.
   (interactive)
   (magit-run-git-async "remote" "prune" "origin"))
 
+(defun magit-remote-update (&optional arg)
+  (interactive)
+  (magit-run-git-async "remote" "update"))
+
 (defun magit-clean-local-branches (&optional arg)
   (interactive)
   (shell-command "git branch | grep -v develop | grep -v master | xargs git branch -d"))
@@ -27,6 +31,10 @@ With a prefix-arg, the merge will be squashed.
   (interactive)
   (magit-run-git "merge" "origin/develop"))
 
+(defun magit-merge-master (&optional arg)
+  (interactive)
+  (magit-run-git "merge" "--no-edit" "--ff-only" "origin/master"))
+
 (defun magit-branch-checkout-new (branch start-point &optional args)
   (interactive (magit-branch-read-args "Create and checkout branch"
                                        (magit-stash-at-point)))
@@ -34,6 +42,21 @@ With a prefix-arg, the merge will be squashed.
       (magit-run-git "stash" "branch" branch start-point)
     (magit-run-git "checkout" args "-b" branch start-point))
   (magit-branch-unset-upstream branch))
+
+(defun magit-push-quickly-set-upstream (&optional args)
+  "Push the current branch to some remote.
+When the Git variable `magit.pushRemote' is set, then push to
+that remote.  If that variable is undefined or the remote does
+not exist, then push to \"origin\".  If that also doesn't exist
+then raise an error.  The local branch is pushed to the remote
+branch with the same name."
+  (interactive (list (magit-push-arguments)))
+  (-if-let (branch (magit-get-current-branch))
+      (-if-let (remote (or (magit-remote-p (magit-get "magit.pushRemote"))
+                           (magit-remote-p "origin")))
+          (magit-run-git-async-no-revert "push" "--set-upstream" "-v" args remote branch)
+        (user-error "Cannot determine remote to push to"))
+    (user-error "No branch is checked out")))
 
 (setq magit-mode-map
       (let ((map (make-keymap)))
@@ -123,13 +146,14 @@ With a prefix-arg, the merge will be squashed.
         (define-key map (kbd "J") 'magit-prune-origin)
         (define-key map (kbd "Y") 'magit-push-popup)
         (define-key map (kbd "H") 'magit-merge-develop)
+        (define-key map (kbd "Q") 'magit-merge-master)
         (define-key map (kbd "N") 'magit-clean-local-branches)
         ;; my changes
         (define-key map (kbd "!") 'magit-shell-command)
         (define-key map (kbd "t") 'magit-tag)
-        (define-key map "r" 'magit-key-mode-popup-rewriting)
+        (define-key map "r" 'magit-rebase-popup)
         (define-key map "R" 'magit-rebase-popup)
-        (define-key map (kbd "P") 'magit-push-quickly)
+        (define-key map (kbd "P") 'magit-push-quickly-set-upstream)
         (define-key map (kbd "f") 'magit-fetch-current)
         (define-key map (kbd "b") 'magit-checkout)
         (define-key map (kbd "B") 'magit-branch-checkout-new)
@@ -147,6 +171,7 @@ With a prefix-arg, the merge will be squashed.
         ;; (define-key map (kbd "m") 'magit-merge-no-ff)
         (define-key map (kbd "M") 'magit-merge)
         (define-key map (kbd "z") 'magit-stash)
+        (define-key map "r" 'magit-rebase-popup)
         map))
 
 (defun my-open-magit-buffer (buf)

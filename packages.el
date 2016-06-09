@@ -60,6 +60,7 @@
         ;; slime
         ;; slime-repl
         smart-tab
+        web-mode
         yaml-mode
         yasnippet
         zenburn-theme))
