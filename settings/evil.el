@@ -8,7 +8,7 @@
 
 (setq evil-ex-search-vim-style-regexp t
       evil-want-fine-undo t
-      evil-leader/in-all-states t
+      evil-leader/in-all-states nil
       evil-mode-line-format nil
       evil-move-cursor-back t
       evil-search-module 'evil-search)

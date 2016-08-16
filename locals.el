@@ -37,6 +37,23 @@ safe-local-variable-values."
                  '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")))
                    (rspec-dired-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")))))
 
-(dir-locals-safe "~/C2/statwing/cake-stats-vm"
-                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats-vm && bundle exec rspec")
-                                 ))))
+(dir-locals-set-class-variables 'statwing-tab-mode
+                                '((nil (indent-tabs-mode . nil))
+                                  (c-mode (indent-tabs-mode . nil))
+                                  (web-mode (indent-tabs-mode . nil))))
+
+(dir-locals-set-class-variables 'qualtrics-tab-mode
+                                '((nil . ((indent-tabs-mode . t)))
+                                  (c-mode . ((indent-tabs-mode . t)))
+                                  (web-mode . ((indent-tabs-mode . t)))))
+
+(dir-locals-set-class-variables 'swproxy-locals
+                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && source ~/.nvm/nvm.sh && nvm use && npm test")
+                                          (indent-tabs-mode . t)))
+                                  (c-mode . ((indent-tabs-mode . t)))
+                                  (web-mode . ((indent-tabs-mode . t)))))
+
+(dir-locals-set-directory-class "/Users/john/C2/qualtrics/" 'qualtrics-tab-mode)
+(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy" 'swproxy-locals)
+(dir-locals-set-directory-class "/Users/john/C2/statwing/" 'statwing-tab-mode)
+(dir-locals-set-directory-class "/Users/john/C2/statwing/cake-stats" 'statwing-tab-mode)
