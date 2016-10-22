@@ -53,7 +53,11 @@ safe-local-variable-values."
                                   (c-mode . ((indent-tabs-mode . t)))
                                   (web-mode . ((indent-tabs-mode . t)))))
 
+(dir-locals-set-class-variables 'results-locals
+                                '((nil . ((compile-command . "cd ~/C2/qualtrics/results-app && source ~/.nvm/nvm.sh && nvm use && npm run test:server")))))
+
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/" 'qualtrics-tab-mode)
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy" 'swproxy-locals)
+(dir-locals-set-directory-class "/Users/john/C2/qualtrics/results-app" 'results-locals)
 (dir-locals-set-directory-class "/Users/john/C2/statwing/" 'statwing-tab-mode)
 (dir-locals-set-directory-class "/Users/john/C2/statwing/cake-stats" 'statwing-tab-mode)

@@ -6,6 +6,6 @@
             (define-key rspec-compilation-mode-map "n" 'compilation-next-error)))
 
 (setq rspec-use-rake-flag nil
-      rspec-use-bundler-when-possible nil
+      rspec-use-bundler-when-possible t
       rspec-use-rvm nil
       rspec-bundle-p t)
