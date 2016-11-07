@@ -48,7 +48,7 @@ safe-local-variable-values."
                                   (web-mode . ((indent-tabs-mode . t)))))
 
 (dir-locals-set-class-variables 'swproxy-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && source ~/.nvm/nvm.sh && nvm use && npm test")
+                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && script/run-test-dbs && source ~/.nvm/nvm.sh && nvm use && npm test")
                                           (indent-tabs-mode . t)))
                                   (c-mode . ((indent-tabs-mode . t)))
                                   (web-mode . ((indent-tabs-mode . t)))))

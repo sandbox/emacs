@@ -1,6 +1,6 @@
+;; make sure to remove the undo-tree dependency from evil after evil downloads
 (require 'evil)
 (evil-mode 1)
-(global-undo-tree-mode -1)
 (global-evil-leader-mode)
 
 (require 'evil-surround)
@@ -46,25 +46,6 @@
         )
       do (evil-set-initial-state mode state))
 
-;; key bindings
-(fill-keymap evil-normal-state-map
-             ;; "SPC"   'ace-jump-char-mode
-             "C-u"   'universal-argument
-             "u"     'undo
-             "C-r"   'isearch-backward-regexp
-             "C-y"   'evil-paste-before
-             "C-n"   'next-line
-             "C-p"   'previous-line
-             "P"     'evil-paste-after
-             "p"     'yank
-             "C-c +" 'evil-numbers/inc-at-pt
-             "C-c -" 'evil-numbers/dec-at-pt)
-
-(fill-keymap evil-motion-state-map
-             (kbd "C-u") 'universal-argument
-             (kbd "C-d") 'delete-char
-             (kbd "C-e") 'evil-end-of-line)
-
 (defun evil-keyboard-quit ()
   (interactive)
   (if (eq evil-state 'insert)
@@ -81,14 +62,33 @@
         (save-buffer))
     (save-buffer)))
 
-(fill-keymap evil-insert-state-map
-             (kbd "C-a") 'move-beginning-of-line
-             (kbd "C-d") 'delete-char
-             (kbd "C-g") 'evil-keyboard-quit
-             (kbd "C-k") 'kill-line
-             (kbd "C-y") 'yank
-             (kbd "C-e") 'move-end-of-line
-             (kbd "C-x C-s") 'evil-normal-state-and-save)
+;; key bindings
+;; normal state
+(define-key evil-normal-state-map (kbd "C-u") 'universal-argument)
+(define-key evil-normal-state-map (kbd "u") 'undo)
+(define-key evil-normal-state-map (kbd "C-r") 'isearch-backward-regexp)
+(define-key evil-normal-state-map (kbd "C-y") 'evil-paste-before)
+(define-key evil-normal-state-map (kbd "C-n") 'next-line)
+(define-key evil-normal-state-map (kbd "C-p") 'previous-line)
+(define-key evil-normal-state-map (kbd "P") 'evil-paste-after)
+(define-key evil-normal-state-map (kbd "p") 'yank)
+(define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
+(define-key evil-normal-state-map (kbd "C-r") 'isearch-backward-regexp)
+
+;; motion state
+(define-key evil-motion-state-map (kbd "C-u") 'universal-argument)
+(define-key evil-motion-state-map (kbd "C-d") 'delete-char)
+(define-key evil-motion-state-map (kbd "C-e") 'evil-end-of-line)
+
+;; insert-state
+(define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
+(define-key evil-insert-state-map (kbd "C-d") 'delete-char)
+(define-key evil-insert-state-map (kbd "C-g") 'evil-keyboard-quit)
+(define-key evil-insert-state-map (kbd "C-k") 'kill-line)
+(define-key evil-insert-state-map (kbd "C-y") 'yank)
+(define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
+(define-key evil-insert-state-map (kbd "C-x C-s") 'evil-normal-state-and-save)
 
 ;; evil leader
 (evil-leader/set-key

@@ -35,14 +35,6 @@ With a prefix-arg, the merge will be squashed.
   (interactive)
   (magit-run-git "merge" "--no-edit" "--ff-only" "origin/master"))
 
-(defun magit-branch-checkout-new (branch start-point &optional args)
-  (interactive (magit-branch-read-args "Create and checkout branch"
-                                       (magit-stash-at-point)))
-  (if (string-match-p "^stash@{[0-9]+}$" start-point)
-      (magit-run-git "stash" "branch" branch start-point)
-    (magit-run-git "checkout" args "-b" branch start-point))
-  (magit-branch-unset-upstream branch))
-
 (defun magit-push-quickly-set-upstream (&optional args)
   "Push the current branch to some remote.
 When the Git variable `magit.pushRemote' is set, then push to
@@ -54,7 +46,7 @@ branch with the same name."
   (-if-let (branch (magit-get-current-branch))
       (-if-let (remote (or (magit-remote-p (magit-get "magit.pushRemote"))
                            (magit-remote-p "origin")))
-          (magit-run-git-async-no-revert "push" "--set-upstream" "-v" args remote branch)
+          (magit-run-git-async "push" "--set-upstream" "-v" args remote branch)
         (user-error "Cannot determine remote to push to"))
     (user-error "No branch is checked out")))
 
@@ -84,7 +76,7 @@ branch with the same name."
         (define-key map "g" 'magit-refresh)
         (define-key map "G" 'magit-refresh-all)
         (define-key map "q" 'magit-mode-bury-buffer)
-        (define-key map "$" 'magit-process)
+        (define-key map "$" 'magit-process-buffer)
         (define-key map "a" 'magit-cherry-apply)
         (define-key map "A" 'magit-cherry-pick-popup)
         ;; (define-key map "b" 'magit-branch-popup)
@@ -156,7 +148,7 @@ branch with the same name."
         (define-key map (kbd "P") 'magit-push-quickly-set-upstream)
         (define-key map (kbd "f") 'magit-fetch-current)
         (define-key map (kbd "b") 'magit-checkout)
-        (define-key map (kbd "B") 'magit-branch-checkout-new)
+        (define-key map (kbd "B") 'magit-branch-and-checkout)
         (define-key map (kbd "F") 'magit-remote-update)
         (define-key map (kbd "l") 'magit-log-current)
         (define-key map (kbd "L") 'magit-log-all)
@@ -167,16 +159,26 @@ branch with the same name."
         (set-keymap-parent map magit-mode-map)
         ;; my changes
         (define-key map (kbd "b") 'magit-checkout)
-        (define-key map (kbd "B") 'magit-branch-checkout-new)
+        (define-key map (kbd "B") 'magit-branch-and-checkout)
         ;; (define-key map (kbd "m") 'magit-merge-no-ff)
         (define-key map (kbd "M") 'magit-merge)
         (define-key map (kbd "z") 'magit-stash)
         (define-key map "r" 'magit-rebase-popup)
         map))
 
-(defun my-open-magit-buffer (buf)
-  (if (get-buffer-window buf)
-      (pop-to-buffer buf)
-    (switch-to-buffer buf)))
-
-(setq magit-status-buffer-switch-function 'my-open-magit-buffer)
+(setq magit-display-buffer-function
+      (lambda (buffer)
+        (display-buffer
+         buffer
+         (cond ((and (derived-mode-p 'magit-mode)
+                     (eq (with-current-buffer buffer major-mode)
+                         'magit-status-mode))
+                nil)
+               ((memq (with-current-buffer buffer major-mode)
+                      '(magit-process-mode
+                        magit-revision-mode
+                        magit-diff-mode
+                        magit-stash-mode))
+                nil)
+               (t
+                '(display-buffer-same-window))))))

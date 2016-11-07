@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (load-file "~/.emacs.d/platform.el")
@@ -19,3 +26,17 @@
 (set-register ?s '(file . "~/.emacs.d/settings"))
 (set-register ?a '(file . "~/.emacs.d/alias.el"))
 (put 'scroll-left 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (zenburn-theme yasnippet yaml-mode wrap-region web-mode smart-tab scss-mode scratch scala-mode sass-mode rspec-mode php-mode nose mode-compile markdown-mode magit lua-mode kill-ring-search json-snatcher json-reformat js2-mode htmlize haskell-mode gitignore-mode gitconfig-mode gist flycheck f expand-region exec-path-from-shell evil-surround evil-paredit evil-numbers evil-leader dired-isearch dired+ diminish csv-mode color-theme coffee-mode clojure-test-mode caml auctex anything-match-plugin anything-config anything ace-jump-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
