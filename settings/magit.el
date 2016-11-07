@@ -92,8 +92,8 @@ branch with the same name."
         (define-key map "\C-c\C-e" 'magit-dispatch-popup)
         (define-key map "e" 'magit-ediff-dwim)
         (define-key map "E" 'magit-ediff-popup)
-        (define-key map "f" 'magit-fetch-popup)
-        (define-key map "F" 'magit-pull-popup)
+        ;; (define-key map "f" 'magit-fetch-popup)
+        ;; (define-key map "F" 'magit-pull-popup)
         (define-key map "i" 'magit-gitignore)
         (define-key map "I" 'magit-gitignore-locally)
         (define-key map "k" 'magit-delete-thing)
@@ -146,10 +146,10 @@ branch with the same name."
         (define-key map "r" 'magit-rebase-popup)
         (define-key map "R" 'magit-rebase-popup)
         (define-key map (kbd "P") 'magit-push-quickly-set-upstream)
-        (define-key map (kbd "f") 'magit-fetch-current)
+        (define-key map (kbd "f") 'magit-fetch)
         (define-key map (kbd "b") 'magit-checkout)
         (define-key map (kbd "B") 'magit-branch-and-checkout)
-        (define-key map (kbd "F") 'magit-remote-update)
+        (define-key map (kbd "F") 'magit-fetch-all)
         (define-key map (kbd "l") 'magit-log-current)
         (define-key map (kbd "L") 'magit-log-all)
         map))
@@ -167,18 +167,4 @@ branch with the same name."
         map))
 
 (setq magit-display-buffer-function
-      (lambda (buffer)
-        (display-buffer
-         buffer
-         (cond ((and (derived-mode-p 'magit-mode)
-                     (eq (with-current-buffer buffer major-mode)
-                         'magit-status-mode))
-                nil)
-               ((memq (with-current-buffer buffer major-mode)
-                      '(magit-process-mode
-                        magit-revision-mode
-                        magit-diff-mode
-                        magit-stash-mode))
-                nil)
-               (t
-                '(display-buffer-same-window))))))
+      'magit-display-buffer-fullcolumn-most-v1)
