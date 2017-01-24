@@ -48,16 +48,27 @@ safe-local-variable-values."
                                   (web-mode . ((indent-tabs-mode . t)))))
 
 (dir-locals-set-class-variables 'swproxy-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && script/run-test-dbs && source ~/.nvm/nvm.sh && nvm use && npm test")
+                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && docker exec -it swproxy-testrunner npm run test")
                                           (indent-tabs-mode . t)))
                                   (c-mode . ((indent-tabs-mode . t)))
                                   (web-mode . ((indent-tabs-mode . t)))))
 
+(dir-locals-set-class-variables 'swproxy-statwing-etl-locals
+                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && docker exec -it statwing-etl-testrunner script/test")
+                                          (indent-tabs-mode . nil)))
+                                  (c-mode . ((indent-tabs-mode . nil)))
+                                  (web-mode . ((indent-tabs-mode . nil)))))
+
 (dir-locals-set-class-variables 'results-locals
                                 '((nil . ((compile-command . "cd ~/C2/qualtrics/results-app && source ~/.nvm/nvm.sh && nvm use && npm run test:server")))))
 
+(dir-locals-set-class-variables 'sds-locals
+                                '((nil . ((compile-command . "cd ~/C2/qualtrics/single-ds && source ~/.nvm/nvm.sh && nvm use results && npm test")))))
+
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/" 'qualtrics-tab-mode)
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy" 'swproxy-locals)
+(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy/statwing-etl" 'swproxy-statwing-etl-locals)
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/results-app" 'results-locals)
+(dir-locals-set-directory-class "/Users/john/C2/qualtrics/single-ds" 'sds-locals)
 (dir-locals-set-directory-class "/Users/john/C2/statwing/" 'statwing-tab-mode)
 (dir-locals-set-directory-class "/Users/john/C2/statwing/cake-stats" 'statwing-tab-mode)

@@ -167,4 +167,4 @@ branch with the same name."
         map))
 
 (setq magit-display-buffer-function
-      'magit-display-buffer-fullcolumn-most-v1)
+      'magit-display-buffer-traditional)
