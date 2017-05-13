@@ -16,35 +16,13 @@
 (evil-leader/set-leader "<SPC>")
 (setq-default evil-shift-width 2)
 
-(loop for (mode . state) in
-      '(
-        (nrepl-mode                . normal)
-        (Info-mode                 . emacs)
-        (ack-mode                  . emacs)
-        (comint-mode               . emacs)
-        (compilation-mode          . emacs)
-        (rspec-compilation-mode    . emacs)
-        (completion-list-mode      . emacs)
-        (custom-mode               . emacs)
-        (erc-mode                  . emacs)
-        (eshell-mode               . emacs)
-        (inferior-ess-mode         . emacs)
-        (magit-key-mode            . emacs)
-        (dired-mode                . emacs)
-        (Custom-mode               . emacs)
-        (efs-mode                  . emacs)
-        (tar-mode                  . emacs)
-        (magit-branch-manager-mode . emacs)
-        (magit-log-edit-mode       . emacs)
-        (grep-mode                 . emacs)
-        (occur-mode                . emacs)
-        (shell-mode                . emacs)
-        (sql-interactive-mode      . emacs)
-        (sql-mode                  . emacs)
-        (view-mode                 . emacs)
-        (inferior-emacs-lisp-mode  . emacs)
-        )
-      do (evil-set-initial-state mode state))
+(add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
+(add-to-list 'evil-emacs-state-modes 'occur-mode)
+(add-to-list 'evil-emacs-state-modes 'shell-mode)
+(add-to-list 'evil-emacs-state-modes 'tar-mode)
+(add-to-list 'evil-emacs-state-modes 'customize-mode)
+(add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
+(add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
 
 (defun evil-keyboard-quit ()
   (interactive)
@@ -93,7 +71,7 @@
 ;; evil leader
 (evil-leader/set-key
   "'" 'delete-pair
-  "a" 'grep-find
+  "a" 'helm-grep-do-git-grep
   "b" 'ido-switch-buffer
   "B" 'ido-switch-buffer-other-window
   "c" 'compile
@@ -101,7 +79,7 @@
   "D" 'desktop-change-dir
   "e" 'er/expand-region
   "E" 'shell
-  "f" 'anything
+  "f" 'helm-browse-project
   "F" 'ido-find-file-other-window
   "g" 'magit-status
   "k" 'kill-this-buffer

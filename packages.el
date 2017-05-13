@@ -3,7 +3,6 @@
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
 
 (package-initialize)
 
@@ -16,18 +15,22 @@
         ;; anything
         ;; anything-config
         ;; anything-match-plugin
-        auctex
-        caml
-        clojure-mode
-        clojure-test-mode
-        nrepl
+        ;; auctex
+        ;; caml
+        ;; clojure-mode
+        ;; clojure-test-mode
+        ;; nrepl
+        async
+        helm
+        helm-ls-git
+
         coffee-mode
         csv-mode
 ;;        elm-mode
         dash
         diminish
-        dired+
-        dired-isearch
+        ;; dired+
+        ;; dired-isearch
         evil
         evil-leader
         evil-surround
@@ -45,7 +48,7 @@
         magit
         markdown-mode
         ;; melpa
-        mode-compile
+        ;; mode-compile
         paredit
         php-mode
         python
@@ -61,7 +64,7 @@
         smart-tab
         web-mode
         yaml-mode
-        yasnippet
+        ;; yasnippet
         zenburn-theme))
 
 (mapc

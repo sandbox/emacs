@@ -17,6 +17,7 @@ elpa/archive-contents
 elpa/**/*.el
 el-get
 history
+ido.last
 /.emacs.desktop
 /.emacs.desktop.lock
 /lisp/haml-mode/

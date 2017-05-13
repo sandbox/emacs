@@ -18,7 +18,7 @@
 
 (define-key global-map "\M-/" 'smart-tab)
 
-(define-key global-map "\C-x\C-b" 'anything-mini)
+(define-key global-map "\C-x\C-b" 'helm-buffers-list)
 (define-key global-map "\C-xnb" 'rename-buffer)
 
 (define-key global-map [(right)] 'windmove-right)
@@ -56,7 +56,8 @@
 
 (define-key global-map "\C-c\C-f" 'grep-find)
 (define-key global-map "\C-cf" 'grep-find)
-(define-key global-map "\C-xf" 'anything)
+(define-key global-map "\C-x\C-f" 'helm-find-files)
+(define-key global-map "\C-xf" 'helm-browse-project)
 (define-key global-map "\M-%" 'query-replace-regexp)
 (define-key global-map "\C-s" 'isearch-forward-regexp)
 (define-key global-map "\C-r" 'isearch-backward-regexp)
