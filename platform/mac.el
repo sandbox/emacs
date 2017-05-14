@@ -1,14 +1,6 @@
 (message "loading mac specific settings")
 
-(setq shell-file-name "bash")
-
-(setenv "SHELL" shell-file-name)
-(setq exec-path (cons "/opt/local/sbin" exec-path))
-(setq exec-path (cons "/opt/local/bin" exec-path))
-(setq exec-path (cons "/usr/texbin" exec-path))
-(setq exec-path (cons "/usr/local/bin" exec-path))
-(setenv "PATH" (concat "/usr/texbin:" (getenv "PATH")))
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(exec-path-from-shell-initialize)
 
 ;;
 ;; someone's blog on copy and pasting between mac and emacs
@@ -23,4 +15,5 @@
       (process-send-eof proc))))
 
 (setq interprogram-cut-function 'paste-to-osx)
+
 (setq interprogram-paste-function 'copy-from-osx)
