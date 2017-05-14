@@ -1,4 +1,6 @@
 ;; make sure to remove the undo-tree dependency from evil after evil downloads
+;;  in evil-pkg remove undo-tree from define-package list
+;;
 (require 'evil)
 (evil-mode 1)
 (global-evil-leader-mode)
@@ -21,8 +23,6 @@
 (add-to-list 'evil-emacs-state-modes 'shell-mode)
 (add-to-list 'evil-emacs-state-modes 'tar-mode)
 (add-to-list 'evil-emacs-state-modes 'customize-mode)
-(add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
-(add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
 
 (defun evil-keyboard-quit ()
   (interactive)
