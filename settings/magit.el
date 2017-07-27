@@ -3,6 +3,8 @@
 (setq magit-push-always-verify nil
       git-commit-summary-max-length 80)
 
+(setq magit-visit-ref-behavior '(checkout-any focus-on-ref))
+
 (defun magit-merge-no-ff (revision)
   "Merge REVISION into the current 'HEAD'; leave changes uncommitted.
 With a prefix-arg, the merge will be squashed.
