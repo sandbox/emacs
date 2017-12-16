@@ -48,7 +48,7 @@ safe-local-variable-values."
                                   (web-mode . ((indent-tabs-mode . t)))))
 
 (dir-locals-set-class-variables 'swproxy-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && docker exec -it swproxy-testrunner npm run test")
+                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && docker exec -it swproxy-testrunner yarn run test")
                                           (indent-tabs-mode . t)))
                                   (c-mode . ((indent-tabs-mode . t)))
                                   (web-mode . ((indent-tabs-mode . t)))))
@@ -68,6 +68,7 @@ safe-local-variable-values."
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/" 'qualtrics-tab-mode)
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy" 'swproxy-locals)
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy/statwing-etl" 'swproxy-statwing-etl-locals)
+(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy/packages" 'swproxy-statwing-etl-locals)
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/results-app" 'results-locals)
 (dir-locals-set-directory-class "/Users/john/C2/qualtrics/single-ds" 'sds-locals)
 (dir-locals-set-directory-class "/Users/john/C2/statwing/" 'statwing-tab-mode)

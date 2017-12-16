@@ -41,6 +41,7 @@
         flycheck
         gitconfig-mode
         gitignore-mode
+        groovy-mode
         haml-mode
         haskell-mode
         json
