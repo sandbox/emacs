@@ -2,11 +2,20 @@
 
 (setq js-indent-level 2
       web-mode-markup-indent-offset 2
+      web-mode-attr-indent-offset 2
       web-mode-css-indent-offset 2
       web-mode-code-indent-offset 2
       web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
 
+(defun web-mode-ident-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2
+        web-mode-attr-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2))
+
 (add-hook 'web-mode-hook 'web-mode-use-tabs)
+(add-hook 'web-mode-hook 'web-mode-ident-hook)
 
 ;;========================================================================
 ;; javascript

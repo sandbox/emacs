@@ -85,6 +85,7 @@
   "k" 'kill-this-buffer
   "K" 'kill-buffer-and-window
   "o" 'browse-url-of-file
+  "Q" 'find-dired
   "s" 'rspec-verify-single
   "t" 'ido-goto-symbol
   "T" 'clojure-jump-between-tests-and-code
