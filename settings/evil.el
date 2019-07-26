@@ -72,6 +72,7 @@
 (evil-leader/set-key
   "'" 'delete-pair
   "a" 'helm-grep-do-git-grep
+  "A" 'helm-grep-repo
   "b" 'ido-switch-buffer
   "B" 'ido-switch-buffer-other-window
   "c" 'compile
