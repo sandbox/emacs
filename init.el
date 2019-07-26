@@ -20,7 +20,7 @@
 
 ;; for emailing with emacs!
 (setq mail-archive-file-name "~/.emacs.d/sentmail")
-(defconst user-mail-address "johnle@cs.stanford.edu")
+(defconst user-mail-address "le.johnq@gmail.com")
 
 (set-register ?e '(file . "~/.emacs.d/init.el"))
 (set-register ?s '(file . "~/.emacs.d/settings"))
