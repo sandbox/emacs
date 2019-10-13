@@ -71,6 +71,7 @@
 ;; evil leader
 (evil-leader/set-key
   "'" 'delete-pair
+  "=" 'ediff-buffers
   "a" 'helm-grep-do-git-grep
   "b" 'ido-switch-buffer
   "B" 'ido-switch-buffer-other-window
