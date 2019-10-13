@@ -41,6 +41,7 @@
         flycheck
         gitconfig-mode
         gitignore-mode
+        git-link
         go-mode
         groovy-mode
         haml-mode

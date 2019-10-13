@@ -7,3 +7,6 @@
      compilation-filter-start (point))))
 
 (add-hook 'compilation-filter-hook #'endless/colorize-compilation)
+
+(setq compilation-error-regexp-alist
+      (delete 'maven compilation-error-regexp-alist))
