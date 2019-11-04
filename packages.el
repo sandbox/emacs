@@ -21,6 +21,7 @@
         ;; clojure-test-mode
         ;; nrepl
         async
+        browse-at-remote
         helm
         helm-ls-git
 
@@ -41,7 +42,6 @@
         flycheck
         gitconfig-mode
         gitignore-mode
-        git-link
         go-mode
         groovy-mode
         haml-mode
