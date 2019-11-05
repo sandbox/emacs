@@ -186,8 +186,7 @@ branch with the same name."
         (set-keymap-parent map magit-mode-map)
         ;; my changes
         (define-key map (kbd "b") 'magit-checkout)
-        (define-key map (kbd "B") 'magit-branch-and-checkout        ;; git-link
-)
+        (define-key map (kbd "B") 'magit-branch-and-checkout)
         ;; (define-key map (kbd "m") 'magit-merge-no-ff)
         (define-key map (kbd "M") 'magit-merge)
         ;; (define-key map (kbd "z") 'magit-stash)

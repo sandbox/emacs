@@ -32,7 +32,9 @@
         diminish
         ;; dired+
         ;; dired-isearch
-        evil
+
+        ;;;; loading evil manually because of issues with undo-tree dependency
+        ;; evil
         evil-leader
         evil-surround
         evil-numbers
