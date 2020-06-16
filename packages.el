@@ -27,6 +27,8 @@
 
         coffee-mode
         csv-mode
+        eglot
+        elixir-mode
 ;;        elm-mode
         dash
         diminish
@@ -67,6 +69,7 @@
         ;; slime
         ;; slime-repl
         smart-tab
+        tide
         web-mode
         yaml-mode
         ;; yasnippet
