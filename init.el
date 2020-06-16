@@ -49,7 +49,7 @@
  '(magit-git-executable "/opt/local/bin/git")
  '(package-selected-packages
    (quote
-    (evil-leader evil-numbers evil-paredit evil-surround browse-at-remote go-mode zenburn-theme yaml-mode web-mode smart-tab scss-mode scratch scala-mode sass-mode rspec-mode php-mode nose markdown-mode magit lua-mode helm-ls-git haskell-mode groovy-mode gitignore-mode gitconfig-mode flycheck expand-region exec-path-from-shell diminish csv-mode coffee-mode)))
+    (jsonrpc eglot elixir-mode evil-leader evil-numbers evil-paredit evil-surround browse-at-remote go-mode zenburn-theme yaml-mode web-mode smart-tab scss-mode scratch scala-mode sass-mode rspec-mode php-mode nose markdown-mode magit lua-mode helm-ls-git haskell-mode groovy-mode gitignore-mode gitconfig-mode flycheck expand-region exec-path-from-shell diminish csv-mode coffee-mode)))
  '(sh-basic-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
