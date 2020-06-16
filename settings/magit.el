@@ -195,3 +195,7 @@ branch with the same name."
 
 (setq magit-display-buffer-function
       'magit-display-buffer-traditional)
+
+;; magit performance tracking
+;; (setq magit-refresh-status-buffer nil)
+(magit-toggle-verbose-refresh)
