@@ -1,83 +1,37 @@
 (require 'tramp)
 
-;; http://atomized.org/2009/05/emacs-23-easier-directory-local-variables/
-(defmacro absolute-dirname (path)
-  "Return the directory name portion of a path.
 
-If PATH is local, return it unaltered.
-If PATH is remote, return the remote diretory portion of the path."
-  `(cond ((tramp-tramp-file-p ,path)
-          (elt (tramp-dissect-file-name ,path) 3))
-         (t ,path)))
+;; Example .dirs-locals.el configuration
 
-(defmacro dir-locals (dir vars)
-  "Set local variables for a directory.
-
-DIR is the base diretory to set variables on.
-
-VARS is an alist of variables to set on files opened under DIR,
-in the same format as `dir-locals-set-class-variables' expects."
-  `(let ((name (intern (concat "dir-locals-"
-                               ,(md5 (expand-file-name dir)))))
-         (base-dir ,dir)
-         (base-abs-dir ,(absolute-dirname dir)))
-     (dir-locals-set-class-variables name ,vars)
-     (dir-locals-set-directory-class ,dir name nil)))
-
-(defmacro dir-locals-safe (directory variables)
-  "Set local variables for a directory and add variables to
-safe-local-variable-values."
-  `(progn
-     (dir-locals ,directory ,variables)
-     (dolist (class ,variables)
-       (dolist (variable (cdr class))
-         (add-to-list 'safe-local-variable-values variable)))))
-
-(dir-locals-safe "~/C2/statwing/cake-stats"
-                 '((ruby-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")))
-                   (rspec-dired-mode . ((rspec-spec-command . "cd /Users/john/C2/statwing/cake-stats && bundle exec rspec")))))
-
-(dir-locals-set-class-variables 'statwing-tab-mode
-                                '((nil (indent-tabs-mode . nil))
-                                  (c-mode (indent-tabs-mode . nil))
-                                  (web-mode (indent-tabs-mode . nil))))
-
-(dir-locals-set-class-variables 'qualtrics-tab-mode
-                                '((nil . ((indent-tabs-mode . t)))
-                                  (c-mode . ((indent-tabs-mode . t)))
-                                  (web-mode . ((indent-tabs-mode . t)))))
-
-(dir-locals-set-class-variables 'swproxy-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && docker exec -it swproxy-testrunner yarn run test")
-                                          (indent-tabs-mode . t)))
-                                  (c-mode . ((indent-tabs-mode . t)))
-                                  (web-mode . ((indent-tabs-mode . t)))))
-
-(dir-locals-set-class-variables 'swproxy-space-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && docker exec -it swproxy-testrunner yarn run test")
-                                          (indent-tabs-mode . nil)))
-                                  (c-mode . ((indent-tabs-mode . nil)))
-                                  (web-mode . ((indent-tabs-mode . nil)))))
-
-(dir-locals-set-class-variables 'swproxy-statwing-etl-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/swproxy && docker exec -it statwing-etl-testrunner script/test")
-                                          (indent-tabs-mode . nil)))
-                                  (c-mode . ((indent-tabs-mode . nil)))
-                                  (web-mode . ((indent-tabs-mode . nil)))))
-
-(dir-locals-set-class-variables 'results-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/results-app && source ~/.nvm/nvm.sh && nvm use && npm run test:server")))))
-
-(dir-locals-set-class-variables 'sds-locals
-                                '((nil . ((compile-command . "cd ~/C2/qualtrics/single-ds && source ~/.nvm/nvm.sh && nvm use results && npm test")))))
-
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/" 'qualtrics-tab-mode)
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy" 'swproxy-locals)
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy/src/client/statsiq" 'swproxy-space-locals)
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy/src/client/advisoriq" 'swproxy-space-locals)
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy/statwing-etl" 'swproxy-statwing-etl-locals)
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/swproxy/packages" 'swproxy-statwing-etl-locals)
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/results-app" 'results-locals)
-(dir-locals-set-directory-class "/Users/john/C2/qualtrics/single-ds" 'sds-locals)
-(dir-locals-set-directory-class "/Users/john/C2/statwing/" 'statwing-tab-mode)
-(dir-locals-set-directory-class "/Users/john/C2/statwing/cake-stats" 'statwing-tab-mode)
+;; ((nil . ((compile-command .  "cd ~/src/swproxy && script/local/yarn run test ")
+;;          (indent-tabs-mode . nil)))
+;;  (c-mode . ((indent-tabs-mode . nil)))
+;;  (web-mode . ((indent-tabs-mode . nil)))
+;;  (magit-mode
+;;   . ((eval . (magit-disable-section-inserter 'magit-insert-tags-header)))))
+;;
+;; ((nil . ((eval . (set (make-local-variable 'dirs-locals-root-project-path)
+;;                       (locate-dominating-file default-directory ".dir-locals.el")))
+;;          (eval . (set (make-local-variable 'swproxy-server-test-command)
+;;                       (concat "cd " dirs-locals-root-project-path " && script/local/yarn run test ")))
+;;          (eval . (set (make-local-variable 'abacus-worker-test-command)
+;;                       (concat "cd " dirs-locals-root-project-path "statwing-abacus-worker && script/local/test -w ./ -c ./setup.cfg ")))
+;;          (eval . (set (make-local-variable 'statwing-etl-test-command)
+;;                       (concat "cd " dirs-locals-root-project-path " && docker exec -it statwing-etl-devrunner script/test")))
+;;          (indent-tabs-mode . nil)))
+;;  (c-mode . ((indent-tabs-mode . nil)))
+;;  (web-mode . ((indent-tabs-mode . nil)))
+;;  (magit-mode . ((eval . (magit-disable-section-inserter 'magit-insert-tags-header))))
+;;  ("__fixtures__/pipelines" .
+;;   ((nil . ((compile-command . (concat
+;;                                "cd " dirs-locals-root-project-path "statwing-abacus-worker && PIPELINE="
+;;                                (file-name-nondirectory (shell-quote-argument buffer-file-name))
+;;                                " SWPROXY_TESTS_UPDATE=false script/local/test -w ./ -c ./setup.cfg tests/abacus/analysis/tests.py:test_analysis_messages"))))))
+;;  ("src/server" .
+;;   ((nil . ((compile-command . swproxy-server-test-command)))))
+;;  ("test/server" .
+;;   ((nil . ((compile-command . swproxy-server-test-command)))))
+;;  ("statwing-etl" .
+;;   ((nil . ((compile-command . statwing-etl-test-command)))))
+;;  ("statwing-abacus-worker" .
+;;   ((nil . ((compile-command . abacus-worker-test-command))))))

@@ -4,7 +4,7 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-(package-initialize)
+;; (package-initialize)
 
 (setq url-http-attempt-keepalives nil)
 
@@ -36,7 +36,7 @@
         ;; dired-isearch
 
         ;;;; loading evil manually because of issues with undo-tree dependency
-        ;; evil
+        evil
         evil-leader
         evil-surround
         evil-numbers

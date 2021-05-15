@@ -2,16 +2,16 @@
 ;;  in evil-pkg remove undo-tree from define-package list in evil-pkg.el under .emacs.d/evil
 ;;
 ;; may need to change load-path for packages to be consistent
-(add-to-list 'load-path "~/.emacs.d/evil")
+;; (add-to-list 'load-path "~/.emacs.d/evil")
 
 (require 'evil)
 (evil-mode 1)
 
-(add-to-list 'load-path "~/.emacs.d/elpa/evil-leader-20140606.1243")
+;; (add-to-list 'load-path "~/.emacs.d/elpa/evil-leader-20140606.1243")
 (require 'evil-leader)
 (global-evil-leader-mode)
 
-(add-to-list 'load-path "~/.emacs.d/elpa/evil-surround-20191013.1656")
+;; (add-to-list 'load-path "~/.emacs.d/elpa/evil-surround-20191013.1656")
 (require 'evil-surround)
 (global-evil-surround-mode nil)
 
