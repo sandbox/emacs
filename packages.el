@@ -35,6 +35,7 @@
         ;; dired+
         ;; dired-isearch
 
+        ess
         ;;;; loading evil manually because of issues with undo-tree dependency
         evil
         evil-leader

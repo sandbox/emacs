@@ -93,7 +93,7 @@
   "g" 'magit-status
   "k" 'kill-this-buffer
   "K" 'kill-buffer-and-window
-  "o" 'browse-url-of-file
+  "o" 'browse-at-remote
   "Q" 'find-dired
   "s" 'rspec-verify-single
   "t" 'ido-goto-symbol

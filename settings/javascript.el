@@ -61,6 +61,7 @@
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mjs$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.mjs$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.bundle.*\\.js$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
