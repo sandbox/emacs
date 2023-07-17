@@ -46,7 +46,7 @@
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(magit-git-executable "/opt/local/bin/git")
  '(package-selected-packages
-   '(evil tide jsonrpc elixir-mode eglot magit magit-popup jest evil-leader evil-numbers evil-paredit evil-surround browse-at-remote go-mode zenburn-theme yaml-mode web-mode smart-tab scss-mode scratch scala-mode sass-mode rspec-mode php-mode nose markdown-mode lua-mode helm-ls-git haskell-mode groovy-mode gitignore-mode gitconfig-mode flycheck expand-region exec-path-from-shell diminish csv-mode coffee-mode))
+   '(browse-at-remote csv-mode diminish eglot elixir-mode evil evil-leader evil-numbers evil-surround exec-path-from-shell expand-region flycheck go-mode haskell-mode helm-ls-git jest jsonrpc lua-mode magit magit-popup markdown-mode nose php-mode rspec-mode sass-mode scala-mode scratch scss-mode smart-tab tide web-mode yaml-mode zenburn-theme))
  '(safe-local-variable-values
    '((eval set
            (make-local-variable 'statwing-etl-test-command)
@@ -63,11 +63,12 @@
      (compile-command . swproxy-server-test-command)
      (compile-command . statwing-etl-test-command)
      (compile-command . abacus-worker-test-command)
-     (compile-command . (concat
-                         "cd " dirs-locals-root-project-path "statwing-abacus-worker && PIPELINE="
-                         (file-name-nondirectory (shell-quote-argument buffer-file-name))
-                         " SWPROXY_TESTS_UPDATE=false script/local/test -w ./ -c ./setup.cfg tests/abacus/analysis/tests.py:test_analysis_messages"))))
- '(sh-basic-offset 2))
+     (compile-command concat "cd " dirs-locals-root-project-path "statwing-abacus-worker && PIPELINE="
+                      (file-name-nondirectory
+                       (shell-quote-argument buffer-file-name))
+                      " SWPROXY_TESTS_UPDATE=false script/local/test -w ./ -c ./setup.cfg tests/abacus/analysis/tests.py:test_analysis_messages")))
+ '(sh-basic-offset 2)
+ '(warning-suppress-types '((comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

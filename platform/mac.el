@@ -1,6 +1,7 @@
 (message "loading mac specific settings")
 
 (exec-path-from-shell-initialize)
+(when (eq system-type 'darwin) (customize-set-variable 'native-comp-driver-options '("-Wl,-w")))
 
 ;;
 ;; someone's blog on copy and pasting between mac and emacs

@@ -97,7 +97,6 @@
   "Q" 'find-dired
   "s" 'rspec-verify-single
   "t" 'ido-goto-symbol
-  "T" 'clojure-jump-between-tests-and-code
   "v" 'rspec-verify
   "w" 'evil-write)
 

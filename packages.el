@@ -25,7 +25,7 @@
         helm
         helm-ls-git
 
-        coffee-mode
+        ;; coffee-mode
         csv-mode
         eglot
         elixir-mode
@@ -35,20 +35,17 @@
         ;; dired+
         ;; dired-isearch
 
-        ess
+        ;; ess
         ;;;; loading evil manually because of issues with undo-tree dependency
         evil
         evil-leader
         evil-surround
         evil-numbers
-        evil-paredit
+        ;; evil-paredit ;; this package doesn't exist anymore
         exec-path-from-shell
         expand-region
         flycheck
-        gitconfig-mode
-        gitignore-mode
         go-mode
-        groovy-mode
         haml-mode
         haskell-mode
         json
@@ -60,8 +57,8 @@
         paredit
         php-mode
         python
-        nose
-        rspec-mode
+        ;; nose
+        ;; rspec-mode
         ruby-mode
         sass-mode
         scala-mode
