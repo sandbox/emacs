@@ -1,5 +1,8 @@
 (message "loading mac specific settings")
 
+(setq gc-cons-threshold 100000000)
+(setq read-process-output-max (* 1024 1024))
+
 (exec-path-from-shell-initialize)
 (when (eq system-type 'darwin) (customize-set-variable 'native-comp-driver-options '("-Wl,-w")))
 

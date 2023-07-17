@@ -69,4 +69,5 @@
 (show-paren-mode 1)
 (delete-selection-mode 1)
 (global-font-lock-mode 1)
+(global-auto-revert-mode t)
 (desktop-save-mode 1)

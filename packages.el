@@ -1,6 +1,6 @@
-(setq evil-want-C-u-scroll t)
-
 (require 'package)
+
+(unless package-archive-contents (package-refresh-contents))
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 

@@ -7,11 +7,9 @@
 (require 'evil)
 (evil-mode 1)
 
-;; (add-to-list 'load-path "~/.emacs.d/elpa/evil-leader-20140606.1243")
 (require 'evil-leader)
 (global-evil-leader-mode)
 
-;; (add-to-list 'load-path "~/.emacs.d/elpa/evil-surround-20191013.1656")
 (require 'evil-surround)
 (global-evil-surround-mode nil)
 
