@@ -28,6 +28,10 @@
 (use-package smart-tab :ensure t)
 
 ;; IDE-like support packages
+(use-package tide
+  :ensure t
+  :after (company flycheck))
+
 (use-package flycheck :ensure t)
 (use-package dap-mode :ensure t)
 (use-package company
