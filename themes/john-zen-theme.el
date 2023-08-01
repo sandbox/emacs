@@ -249,7 +249,7 @@
    `(isearch-fail                        ((t (:underline t :background ,john-red :foreground ,john-black))))
    `(italic                              ((t (:underline t))))
    `(lazy-highlight                      ((t (:background ,john-gray-2))))
-   `(lazy-highlight                      ((,class (:foreground nil))))
+   `(lazy-highlight                      ((,class (:foreground "unspecified"))))
    `(link                                ((t (:foreground ,john-cyan))))
    ;; `(link-visited                        ((t ())))
    `(linum                               ((t (:background ,john-white :foreground ,john-black))))

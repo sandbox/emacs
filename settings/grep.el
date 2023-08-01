@@ -5,6 +5,6 @@
       )
 
 (add-hook 'grep-mode-hook
-          '(lambda ()
-             (define-key grep-mode-map "j" 'next-error-no-select)
-             (define-key grep-mode-map "k" 'previous-error-no-select)))
+          #'(lambda ()
+              (define-key grep-mode-map "j" 'next-error-no-select)
+              (define-key grep-mode-map "k" 'previous-error-no-select)))

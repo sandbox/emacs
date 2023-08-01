@@ -1,95 +1,69 @@
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (unless package-archive-contents (package-refresh-contents))
 
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-
-;; (package-initialize)
-
 (setq url-http-attempt-keepalives nil)
 
-;; Figure these out later
-(defvar john-packages
-      '(
-        ;; ace-jump-mode
-        ;; anything
-        ;; anything-config
-        ;; anything-match-plugin
-        ;; auctex
-        ;; caml
-        ;; clojure-mode
-        ;; clojure-test-mode
-        ;; nrepl
-        async
-        browse-at-remote
-        helm
-        helm-ls-git
+(use-package async :ensure t)
 
-        ;; coffee-mode
-        csv-mode
-        eglot
-        elixir-mode
-;;        elm-mode
-        dash
-        diminish
-        ;; dired+
-        ;; dired-isearch
+;; navigation
+(use-package browse-at-remote :ensure t)
+(use-package helm :ensure t)
+(use-package helm-ls-git :ensure t)
+(use-package helm-tree-sitter :ensure t)
+(use-package magit :ensure t)
 
-        ;; ess
-        ;;;; loading evil manually because of issues with undo-tree dependency
-        evil
-        evil-leader
-        evil-surround
-        evil-numbers
-        ;; evil-paredit ;; this package doesn't exist anymore
-        exec-path-from-shell
-        expand-region
-        flycheck
-        go-mode
-        haml-mode
-        haskell-mode
-        json
-        lua-mode
-        magit
-        markdown-mode
-        ;; melpa
-        ;; mode-compile
-        paredit
-        php-mode
-        python
-        ;; nose
-        ;; rspec-mode
-        ruby-mode
-        sass-mode
-        scala-mode
-        scratch
-        scss-mode
-        ;; slime
-        ;; slime-repl
-        smart-tab
-        tide
-        web-mode
-        yaml-mode
-        ;; yasnippet
-        zenburn-theme))
+;; system
+(use-package exec-path-from-shell :ensure t)
 
-(mapc
- (lambda (package)
-   (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-           (package-install package))))
- john-packages)
+;; editing
+(use-package expand-region :ensure t)
+(use-package evil :ensure t)
+(use-package evil-leader :ensure t)
+(use-package evil-surround :ensure t)
+(use-package evil-numbers :ensure t)
+(use-package evil-textobj-tree-sitter :ensure t)
+(use-package paredit :ensure t)
+(use-package smart-tab :ensure t)
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
+;; IDE-like support packages
+(use-package flycheck :ensure t)
+(use-package dap-mode :ensure t)
+(use-package company
+  :ensure t
+  :hook (after-init . global-company-mode)
+  :custom
+  (company-idle-delay 0))
 
-;;
-;; Load modes that emacs doesn't have and el-get doesn't properly
-;; install
-;;
-;; (load "~/.emacs.d/lisp/magit.el")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/magit/contrib")
-;; (load "~/.emacs.d/lisp/matlab.el")
-;; (load "~/.emacs.d/lisp/csharp-mode.el")
-;; (package-install-file "~/.emacs.d/lisp/less-css-mode-0.6.el")
+;; major modes
+(use-package elixir-mode :ensure t)
+(use-package go-mode :ensure t)
+(use-package csv-mode :ensure t)
+(use-package json :ensure t)
+(use-package lua-mode :ensure t)
+(use-package markdown-mode :ensure t)
+(use-package php-mode :ensure t)
+(use-package python :ensure t)
+(use-package ruby-mode :ensure t)
+(use-package rspec-mode :ensure t)
+(use-package sass-mode :ensure t)
+(use-package scala-mode :ensure t)
+(use-package scss-mode :ensure t)
+(use-package web-mode :ensure t)
+(use-package yaml-mode :ensure t)
+
+;; minor modes
+(use-package diminish :ensure t)
+(use-package dash :ensure t)
+
+;; misc
+(use-package scratch :ensure t)
+
+;; themes
+(use-package zenburn-theme :ensure t)
+
+;; emacs speaks statistics
+(use-package ess :ensure t)
 
 (require 'scratch)

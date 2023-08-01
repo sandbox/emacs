@@ -109,9 +109,9 @@
 (define-key evil-motion-state-map [down] 'evil-undefine)
 
 ;; compilation mode
-(add-hook 'compilation-mode-hook '(lambda ()
-                                    (local-unset-key "h")
-                                    (local-unset-key "0")))
+(add-hook 'compilation-mode-hook #'(lambda ()
+                                     (local-unset-key "h")
+                                     (local-unset-key "0")))
 
 ;; org mode
 (evil-declare-key 'normal org-mode-map
