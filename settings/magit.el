@@ -35,7 +35,7 @@ With a prefix-arg, the merge will be squashed.
 
 (defun magit-merge-master (&optional arg)
   (interactive)
-  (magit-run-git "merge" "--no-edit" "--ff-only" "origin/master"))
+  (magit-run-git "merge" "--no-edit" "--ff-only" (concat "origin/" (magit-get-current-branch))))
 
 (defun magit-push-quickly-set-upstream (&optional args)
   "Push the current branch to some remote.

@@ -46,7 +46,7 @@
  '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
  '(magit-git-executable "/opt/local/bin/git")
  '(package-selected-packages
-   '(evil-textobj-tree-sitter helm-tree-sitter tree-sitter-langs tree-sitter dap-mode browse-at-remote csv-mode diminish eglot elixir-mode evil evil-leader evil-numbers evil-surround exec-path-from-shell expand-region flycheck go-mode haskell-mode helm-ls-git jest jsonrpc lua-mode magit magit-popup markdown-mode nose php-mode rspec-mode sass-mode scala-mode scratch scss-mode smart-tab tide web-mode yaml-mode zenburn-theme))
+   '(tide paredit company ess evil-textobj-tree-sitter helm-tree-sitter tree-sitter-langs tree-sitter dap-mode browse-at-remote csv-mode diminish eglot elixir-mode evil evil-leader evil-numbers evil-surround exec-path-from-shell expand-region flycheck go-mode haskell-mode helm-ls-git jest jsonrpc lua-mode magit magit-popup markdown-mode nose php-mode rspec-mode sass-mode scala-mode scratch scss-mode smart-tab web-mode yaml-mode zenburn-theme))
  '(sh-basic-offset 2)
  '(warning-suppress-types '((comp) (comp))))
 (custom-set-faces

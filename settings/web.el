@@ -53,16 +53,10 @@
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\.coffee$" . coffee-mode))
 
-(add-hook 'typescript-ts-mode-hook #'setup-tide-mode)
-(add-hook 'tsx-ts-mode-hook #'setup-tide-mode)
-
 (add-hook 'web-mode-hook
           (lambda ()
             (when (or (string-equal "ts" (file-name-extension buffer-file-name)) (string-equal "tsx" (file-name-extension buffer-file-name)))
               (setup-tide-mode))))
-
-;; enable typescript-tslint checker
-(flycheck-add-mode 'typescript-tslint 'web-mode)
 
 (setq tide-tsserver-executable "node_modules/typescript/bin/tsserver")
 (setq tide-format-options
